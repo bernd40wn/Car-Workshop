@@ -1,6 +1,5 @@
 package pl.coderslab.dao;
 
-import pl.coderslab.dbservice.DbService;
 import pl.coderslab.model.Vehicle;
 
 import javax.naming.Context;
@@ -36,30 +35,17 @@ public class VehicleDao {
 
 
     public static void saveToDb(Vehicle vehicle) {
-//        if (vehicle.getId() == 0) {
-//            String query = "INSERT into book(title, author, isbn) VALUES (?,?,?)";
-//            poprawic query
-//            List<String> params = new ArrayList<>();
-//            params.add(vehicle.getTitle());
-//            params.add(vehicle.getAuthor());
-//            params.add(vehicle.getIsbn());
-//            try {
-//                Integer id = DbService.insertIntoDatabase(query, params);
-//                if (id != null) {
-//                    vehicle.setId(id);
-//                }
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
+
     }
 
-//    public static void deleteVehicle(int id) throws SQLException {
-////        String query = "DELETE from book where id = ?";
-//        List<String> params = new ArrayList<>();
-//        params.add(String.valueOf(id));
-//        DbService.executeUpdate(query, params);
-//
-//
-//    }
+    public static void deleteVehicle(int id) throws SQLException {
+
+    }
+
+    public static ArrayList<Vehicle> loadAll() {
+        return null;
+    }
+    public static Vehicle loadById(int id) {
+        return null;
+    }
 }
