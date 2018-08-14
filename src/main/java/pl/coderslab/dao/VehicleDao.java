@@ -17,7 +17,7 @@ public class VehicleDao {
 
     public static void saveToDb(Vehicle vehicle) {
         if (vehicle.getId() == 0) {
-            String query = "INSERT INTO Vehicle(model, brand, productionDate, plateNumber, nextService, customer_id VALUES(?,?,?,?,?,?)";
+            String query = "INSERT INTO Vehicle (model, brand, productionDate, plateNumber, nextService, customer_id) VALUES(?,?,?,?,?,?)";
             List<String> params = new ArrayList<>();
             params.add(vehicle.getModel());
             params.add(vehicle.getBrand());
