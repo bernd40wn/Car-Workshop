@@ -1,7 +1,6 @@
 package pl.coderslab.dao;
 
 import pl.coderslab.model.Order;
-import pl.coderslab.model.Vehicle;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
