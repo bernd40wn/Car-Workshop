@@ -25,6 +25,31 @@ public class Vehicle {
         return id;
     }
 
+    public Vehicle setModel(String model) {
+        this.model = model;
+        return this;
+    }
+
+    public Vehicle setBrand(String brand) {
+        this.brand = brand;
+        return this;
+    }
+
+    public Vehicle setProductionDate(int productionDate) {
+        this.productionDate = productionDate;
+        return this;
+    }
+
+    public Vehicle setPlateNumber(String plateNumber) {
+        this.plateNumber = plateNumber;
+        return this;
+    }
+
+    public Vehicle setNextService(Date nextService) {
+        this.nextService = nextService;
+        return this;
+    }
+
     public String getModel() {
         return model;
     }
