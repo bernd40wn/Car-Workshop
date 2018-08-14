@@ -7,12 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2bc80a6-506d-4383-a631-5d034085ea85" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/tests/main1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/StatusDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/StatusDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/VehicleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/VehicleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/model/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/model/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/DbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/DbService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/model/Order.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="305">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="28" />
+              <caret line="27" selection-start-line="27" selection-end-line="28" />
               <folding>
                 <element signature="e#1408#1409#0" expanded="true" />
                 <element signature="e#1433#1434#0" expanded="true" />
@@ -90,8 +87,8 @@
       <file leaf-file-name="DbService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/dao/DbService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="-910">
+              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#320#321#0" expanded="true" />
@@ -105,11 +102,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderDao.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main1.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/tests/main1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/dao/OrderDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1159">
-              <caret line="188" column="4" lean-forward="true" selection-start-line="188" selection-start-column="4" selection-end-line="188" selection-end-column="4" />
+            <state relative-caret-position="439">
+              <caret line="188" selection-start-line="188" selection-end-line="188" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/reports.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/dbservice/DbService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/services/DbService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/DbService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/model/DbService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/model/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/model/Order.java" />
@@ -165,6 +170,8 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/StatusDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/VehicleDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/OrderDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/dao/DbService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/tests/main1.java" />
       </list>
     </option>
   </component>
@@ -254,6 +261,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="coderslab" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CarWorkshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CarWorkshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="coderslab" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CarWorkshop" type="b2602c69:ProjectViewProjectNode" />
@@ -436,7 +452,7 @@
       <workItem from="1534148391437" duration="11249000" />
       <workItem from="1534174345150" duration="1760000" />
       <workItem from="1534185575537" duration="2005000" />
-      <workItem from="1534233316134" duration="19188000" />
+      <workItem from="1534233316134" duration="21115000" />
     </task>
     <task id="LOCAL-00001" summary="projekt">
       <created>1534147748455</created>
@@ -494,15 +510,30 @@
       <option name="project" value="LOCAL" />
       <updated>1534253437668</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="modyfikacje klas Status i Vehicle, dodanie DbService, wykonanie klas Dao dla Status i Vehicle">
+      <created>1534265668353</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1534265668353</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35438000" />
+    <option name="totallyTimeSpent" value="37365000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053364" side_tool="true" weight="0.31926408" />
@@ -516,22 +547,22 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32998884" />
       <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4997233" weight="0.32998884" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" sideWeight="0.4994664" weight="0.32900432" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" sideWeight="0.4994664" weight="0.32887402" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4967983" visible="true" weight="0.3188406" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.4967983" visible="true" weight="0.3188406" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994664" weight="0.23160173" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4980631" weight="0.33890748" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27006087" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27006087" />
       <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -565,27 +596,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/model/Status.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/model/Vehicle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/dao/CustomerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/dao/EmployeeDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -963,7 +973,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/model/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="28" />
+          <caret line="27" selection-start-line="27" selection-end-line="28" />
           <folding>
             <element signature="e#1408#1409#0" expanded="true" />
             <element signature="e#1433#1434#0" expanded="true" />
@@ -1007,22 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/dao/DbService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#504#505#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/dao/VehicleDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-525">
@@ -1040,13 +1034,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/Customers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/dao/OrderDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
-          <caret line="188" column="4" lean-forward="true" selection-start-line="188" selection-start-column="4" selection-end-line="188" selection-end-column="4" />
+        <state relative-caret-position="439">
+          <caret line="188" selection-start-line="188" selection-end-line="188" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/dao/DbService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-910">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/customers.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/tests/main1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
         </state>
       </provider>
     </entry>
