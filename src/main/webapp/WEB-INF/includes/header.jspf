@@ -1,0 +1,22 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: hotshot
+  Date: 14.08.18
+  Time: 16:57
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Warsztat Samochodowy</title>
+</head>
+<body>
+<h1>Warsztat Samochowy Heheszek</h1>
+<ul>
+    <li><a href='/'>Home</a></li>
+    <li><a href='/employees'>Pracownicy</a></li>
+    <li><a href='/customers'>Klienci</a></li>
+    <li><a href='/vehicles'>Samochody</a></li>
+    <li><a href='/orders'>Zlecenia</a></li>
+    <li><a href='/reports'>Raporty</a></li>
+</ul>
