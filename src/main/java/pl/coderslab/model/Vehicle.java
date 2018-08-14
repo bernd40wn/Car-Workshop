@@ -3,26 +3,44 @@ package pl.coderslab.model;
 import java.util.Date;
 
 public class Vehicle {
-    int id;
+    private int id=0;
     private String model;
     private String brand;
-    private int productionDate;
+    private Date productionDate;
     private String plateNumber;
     private Date nextService;
+    private int customer_id;
 
     public Vehicle() {
     }
 
-    public Vehicle(String model, String brand, int productionDate, String plateNumber, Date nextService) {
+    public Vehicle(String model, String brand, Date productionDate, String plateNumber, Date nextService) {
         this.model = model;
         this.brand = brand;
         this.productionDate = productionDate;
         this.plateNumber = plateNumber;
         this.nextService = nextService;
+
     }
+
+    public Vehicle(int id, String model, String brand, Date productionDate, String plateNumber, Date nextService, int customer_id) {
+        this.id = id;
+        this.model = model;
+        this.brand = brand;
+        this.productionDate = productionDate;
+        this.plateNumber = plateNumber;
+        this.nextService = nextService;
+        this.customer_id = customer_id;
+    }
+
 
     public int getId() {
         return id;
+    }
+
+    public Vehicle setId(int id) {
+        this.id = id;
+        return this;
     }
 
     public Vehicle setModel(String model) {
@@ -30,12 +48,16 @@ public class Vehicle {
         return this;
     }
 
+    public int getCustomer_id() {
+        return customer_id;
+    }
+
     public Vehicle setBrand(String brand) {
         this.brand = brand;
         return this;
     }
 
-    public Vehicle setProductionDate(int productionDate) {
+    public Vehicle setProductionDate(Date productionDate) {
         this.productionDate = productionDate;
         return this;
     }
@@ -50,6 +72,11 @@ public class Vehicle {
         return this;
     }
 
+    public Vehicle setCustomer_id(int customer_id) {
+        this.customer_id = customer_id;
+        return this;
+    }
+
     public String getModel() {
         return model;
     }
@@ -58,7 +85,7 @@ public class Vehicle {
         return brand;
     }
 
-    public int getProductionDate() {
+    public Date getProductionDate() {
         return productionDate;
     }
 
