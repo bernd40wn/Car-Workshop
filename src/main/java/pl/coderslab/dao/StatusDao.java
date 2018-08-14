@@ -16,9 +16,8 @@ public class StatusDao {
 
     public static void saveToDb(Status status) {
         if (status.getId() == 0) {
-            String query = "INSERT INTO Status(id, statusId, order_id VALUES(?,?,?)";
+            String query = "INSERT INTO Status (statusId, order_id) VALUES(?,?)";
             List<String> params = new ArrayList<>();
-            params.add(String.valueOf(status.getId()));
             params.add(String.valueOf(status.getStatusId()));
             params.add(String.valueOf(status.getOrder_id()));
             try {
