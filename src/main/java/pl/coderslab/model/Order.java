@@ -1,10 +1,9 @@
 package pl.coderslab.model;
 
-import java.time.temporal.ValueRange;
 import java.util.Date;
 
 public class Order {
-    int id;
+    private int id=0;
     private Date admissionDate;
     private Date plannedServiceDate;
     private Date serviceDate;
@@ -18,12 +17,16 @@ public class Order {
 
     private float fixCosts;
     private float partsCosts;
+    private int customer_id;
+    private int employee_id;
+    private int vehicle_id;
 
 
     public Order() {
     }
 
-    public Order(Date admissionDate, Date plannedServiceDate, Date serviceDate, Employee employee, String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts) {
+    public Order(int id, Date admissionDate, Date plannedServiceDate, Date serviceDate, Employee employee, String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts, int customer_id, int employee_id, int vehicle_id) {
+        this.id = id;
         this.admissionDate = admissionDate;
         this.plannedServiceDate = plannedServiceDate;
         this.serviceDate = serviceDate;
@@ -34,10 +37,18 @@ public class Order {
         this.vehicle = vehicle;
         this.fixCosts = fixCosts;
         this.partsCosts = partsCosts;
+        this.customer_id = customer_id;
+        this.employee_id = employee_id;
+        this.vehicle_id = vehicle_id;
     }
 
     public int getId() {
         return id;
+    }
+
+    public Order setId(int id) {
+        this.id = id;
+        return this;
     }
 
     public Date getAdmissionDate() {
@@ -127,6 +138,33 @@ public class Order {
 
     public Order setPartsCosts(float partsCosts) {
         this.partsCosts = partsCosts;
+        return this;
+    }
+
+    public int getCustomer_id() {
+        return customer_id;
+    }
+
+    public Order setCustomer_id(int customer_id) {
+        this.customer_id = customer_id;
+        return this;
+    }
+
+    public int getEmployee_id() {
+        return employee_id;
+    }
+
+    public Order setEmployee_id(int employee_id) {
+        this.employee_id = employee_id;
+        return this;
+    }
+
+    public int getVehicle_id() {
+        return vehicle_id;
+    }
+
+    public Order setVehicle_id(int vehicle_id) {
+        this.vehicle_id = vehicle_id;
         return this;
     }
 }

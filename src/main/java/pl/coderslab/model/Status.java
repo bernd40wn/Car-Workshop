@@ -2,7 +2,7 @@ package pl.coderslab.model;
 
 public class Status {
 
-    private int id;
+    private int id=0;
     private int statusId = -1;
     private int order_id;
 
