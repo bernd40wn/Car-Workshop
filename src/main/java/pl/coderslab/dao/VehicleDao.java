@@ -11,7 +11,7 @@ public class VehicleDao {
 
 
     public static void saveToDb(Vehicle vehicle) {
-
+        System.out.println("gmm");
     }
 
     public static void deleteVehicle(int id) throws SQLException {
