@@ -12,6 +12,7 @@ public class VehicleDao {
 
     public static void saveToDb(Vehicle vehicle) {
         System.out.println("gmm");
+        System.out.println("test2");
     }
 
     public static void deleteVehicle(int id) throws SQLException {
