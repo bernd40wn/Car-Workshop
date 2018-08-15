@@ -3,7 +3,7 @@ package pl.coderslab.model;
 import java.sql.Date;
 
 public class Order {
-    private int id=0;
+    private int id = 0;
     private Date admissionDate;
     private Date plannedServiceDate;
     private Date serviceDate;
@@ -20,12 +20,13 @@ public class Order {
     private int customer_id;
     private int employee_id;
     private int vehicle_id;
+    private int status_id;
 
 
     public Order() {
     }
 
-    public Order(Date admissionDate, Date plannedServiceDate, Date serviceDate, Employee employee, String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts, int customer_id, int employee_id, int vehicle_id) {
+    public Order(Date admissionDate, Date plannedServiceDate, Date serviceDate, Employee employee, String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts, int customer_id, int employee_id, int vehicle_id, int status_id) {
         this.admissionDate = admissionDate;
         this.plannedServiceDate = plannedServiceDate;
         this.serviceDate = serviceDate;
@@ -39,23 +40,16 @@ public class Order {
         this.customer_id = customer_id;
         this.employee_id = employee_id;
         this.vehicle_id = vehicle_id;
+        this.status_id = status_id;
     }
 
-    public Order(int id, Date admissionDate, Date plannedServiceDate, Date serviceDate, Employee employee, String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts, int customer_id, int employee_id, int vehicle_id) {
-        this.id = id;
-        this.admissionDate = admissionDate;
-        this.plannedServiceDate = plannedServiceDate;
-        this.serviceDate = serviceDate;
-        this.employee = employee;
-        this.carProblemDescription = carProblemDescription;
-        this.carFixDescription = carFixDescription;
-        this.status = status;
-        this.vehicle = vehicle;
-        this.fixCosts = fixCosts;
-        this.partsCosts = partsCosts;
-        this.customer_id = customer_id;
-        this.employee_id = employee_id;
-        this.vehicle_id = vehicle_id;
+    public int getStatus_id() {
+        return status_id;
+    }
+
+    public Order setStatus_id(int status_id) {
+        this.status_id = status_id;
+        return this;
     }
 
     public int getId() {

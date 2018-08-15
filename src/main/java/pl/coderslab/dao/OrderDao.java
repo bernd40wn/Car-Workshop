@@ -5,8 +5,6 @@ import pl.coderslab.model.Order;
 
 import java.sql.Date;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,19 +13,14 @@ public class OrderDao {
     public static void saveToDb(Order order) {
         if (order.getId() == 0) {
             String query = "INSERT INTO Orders (admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
-                    "fixCosts, partsCosts, customer_id, employee_id, vehicle_id)" +
-                    " VALUES(?,?,?,?,?,?,?,?,?,?)";
+                    "fixCosts, partsCosts, customer_id, employee_id, vehicle_id, status_id)" +
+                    " VALUES(?,?,?,?,?,?,?,?,?,?,?)";
             List<String> params = new ArrayList<>();
             params.add(String.valueOf(order.getAdmissionDate()));
             params.add(String.valueOf(order.getPlannedServiceDate()));
             params.add(String.valueOf(order.getServiceDate()));
-            //Employee empleyee
-
             params.add(order.getCarProblemDescription());
             params.add(order.getCarFixDescription());
-            //Status status
-            //Vehicle vehicle
-
             params.add(String.valueOf(order.getFixCosts()));
             params.add(String.valueOf(order.getPartsCosts()));
             //referencje na inne tabele
@@ -35,6 +28,7 @@ public class OrderDao {
             params.add(String.valueOf(order.getCustomer_id()));
             params.add(String.valueOf(order.getEmployee_id()));
             params.add(String.valueOf(order.getVehicle_id()));
+            params.add(String.valueOf(order.getStatus_id()));
             try {
                 Integer id = DbService.insertIntoDatabase(query, params);
                 if (id != null) {
@@ -46,18 +40,13 @@ public class OrderDao {
 
         } else {
             String query = "UPDATE Orders SET admissionDate = ? , plannedServiceDate = ? , serviceDate = ? , carProblemDescription = ? , carFixDescription = ? , " +
-                    "fixCosts = ? , partsCosts = ? , customer_id = ? , employee_id = ? , vehicle_id = ?  WHERE id = ?";
+                    "fixCosts = ? , partsCosts = ? , customer_id = ? , employee_id = ? , vehicle_id = ? , status_id = ? WHERE id = ?";
             List<String> params = new ArrayList<>();
             params.add(String.valueOf(order.getAdmissionDate()));
             params.add(String.valueOf(order.getPlannedServiceDate()));
             params.add(String.valueOf(order.getServiceDate()));
-            //Employee empleyee
-
             params.add(order.getCarProblemDescription());
             params.add(order.getCarFixDescription());
-            //Status status
-            //Vehicle vehicle
-
             params.add(String.valueOf(order.getFixCosts()));
             params.add(String.valueOf(order.getPartsCosts()));
             //referencje na inne tabele
@@ -65,6 +54,7 @@ public class OrderDao {
             params.add(String.valueOf(order.getCustomer_id()));
             params.add(String.valueOf(order.getEmployee_id()));
             params.add(String.valueOf(order.getVehicle_id()));
+            params.add(String.valueOf(order.getStatus_id()));
 
             params.add(String.valueOf(order.getId()));
             try {
@@ -77,28 +67,20 @@ public class OrderDao {
     }
 
 
-
     public static ArrayList<Order> loadAll() {
         ArrayList<Order> orders = new ArrayList<>();
         String query = "SELECT id, admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
-                "fixCosts, partsCosts, customer_id, employee_id, vehicle_id FROM Orders";
+                "fixCosts, partsCosts, customer_id, employee_id, vehicle_id, status_id FROM Orders";
         try {
             List<String[]> rows = DbService.getData(query, null);
             for (String[] row : rows) {
-
-                DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
                 Order order = new Order();
                 order.setId(Integer.parseInt(row[0]));
                 order.setAdmissionDate(Date.valueOf(row[1]));
                 order.setPlannedServiceDate(Date.valueOf(row[2]));
                 order.setServiceDate(Date.valueOf(row[3]));
-                //Employee empleyee
-
                 order.setCarProblemDescription(row[4]);
                 order.setCarFixDescription(row[5]);
-                //Status status
-                //Vehicle vehicle
-
                 order.setFixCosts(Float.parseFloat(row[6]));
                 order.setPartsCosts(Float.parseFloat(row[7]));
                 //referencje z innych tablic
@@ -106,30 +88,29 @@ public class OrderDao {
                 order.setCustomer_id(Integer.parseInt(row[8]));
                 order.setEmployee_id(Integer.parseInt(row[9]));
                 order.setVehicle_id(Integer.parseInt(row[10]));
+                order.setStatus_id(Integer.parseInt(row[11]));
 
-                //wczytanie i dodanie obiektow (brakuje mi customer i employee
-//                order.setEmployee(E)
-//                order.setStatus(StatusDao.loadById())
+                //wczytanie i dodanie obiektow
+                order.setEmployee(EmployeeDao.loadById(order.getEmployee_id()));
+                order.setStatus(StatusDao.loadById(order.getStatus_id()));
                 order.setVehicle(VehicleDao.loadById(order.getVehicle_id()));
 
             }
         } catch (SQLException e) {
             e.printStackTrace();
-//        } catch (ParseException e) {
-//            e.printStackTrace();
+
         }
         return orders;
     }
 
     public static Order loadById(int id) {
         String query = "SELECT id, admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
-                "fixCosts, partsCosts, customer_id, employee_id, vehicle_id FROM Orders WHERE id = ?";
+                "fixCosts, partsCosts, customer_id, employee_id, vehicle_id, status_id FROM Orders WHERE id = ?";
         List<String> params = new ArrayList<>();
         params.add(String.valueOf(id));
         try {
             List<String[]> rows = DbService.getData(query, null);
             for (String[] row : rows) {
-                DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
                 Order order = new Order();
                 order.setId(Integer.parseInt(row[0]));
                 order.setAdmissionDate(Date.valueOf(row[1]));
@@ -149,22 +130,22 @@ public class OrderDao {
                 order.setCustomer_id(Integer.parseInt(row[8]));
                 order.setEmployee_id(Integer.parseInt(row[9]));
                 order.setVehicle_id(Integer.parseInt(row[10]));
+                order.setStatus_id(Integer.parseInt(row[11]));
 
                 //wczytanie i dodanie obiektow (brauej mi customer i employee
-//                order.setEmployee(E)
-//                order.setStatus(StatusDao.loadById())
+                order.setEmployee(EmployeeDao.loadById(order.getEmployee_id()));
+                order.setStatus(StatusDao.loadById(order.getStatus_id()));
                 order.setVehicle(VehicleDao.loadById(order.getVehicle_id()));
                 return order;
             }
         } catch (SQLException e) {
             e.printStackTrace();
-//        } catch (ParseException e) {
-//            e.printStackTrace();
+
         }
         return null;
     }
 
-    public static void deleteOrder(int id)  {
+    public static void deleteOrder(int id) {
         String query = "DELETE FROM Orders WHERE id = ?";
         List<String> params = new ArrayList<>();
         params.add(String.valueOf(id));

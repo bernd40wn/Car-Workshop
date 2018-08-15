@@ -11,10 +11,9 @@ public class StatusDao {
 
     public static void saveToDb(Status status) {
         if (status.getId() == 0) {
-            String query = "INSERT INTO Status (statusId, order_id) VALUES(?,?)";
+            String query = "INSERT INTO Status (status) VALUES(?)";
             List<String> params = new ArrayList<>();
-            params.add(String.valueOf(status.getStatusId()));
-            params.add(String.valueOf(status.getOrder_id()));
+            params.add(String.valueOf(status.getStatus()));
             try {
                 Integer id = DbService.insertIntoDatabase(query, params);
                 if (id != null) {
@@ -25,10 +24,9 @@ public class StatusDao {
             }
 
         } else {
-            String query = "UPDATE Status SET statusId = ?, order_id = ? WHERE id = ?";
+            String query = "UPDATE Status SET status = ? WHERE id = ?";
             List<String> params = new ArrayList<>();
-            params.add(String.valueOf(status.getStatusId()));
-            params.add(String.valueOf(status.getOrder_id()));
+            params.add(String.valueOf(status.getStatus()));
 
             params.add(String.valueOf(status.getId()));
             try {
@@ -41,14 +39,13 @@ public class StatusDao {
 
     public static ArrayList<Status> loadAll() {
         ArrayList<Status> statuses = new ArrayList<>();
-        String query = "SELECT id, statusId, orderId  FROM Status";
+        String query = "SELECT id, statusId  FROM Status";
         try {
             List<String[]> rows = DbService.getData(query, null);
             for (String[] row : rows) {
                 Status status = new Status();
                 status.setId(Integer.parseInt(row[0]));
-                status.setStatusId(Integer.parseInt(row[1]));
-                status.setOrder_id(Integer.parseInt(row[2]));
+                status.setStatus(row[1]);
 
                 statuses.add(status);
             }
@@ -59,7 +56,7 @@ public class StatusDao {
     }
 
     public static Status loadById(int id) {
-        String query = "SELECT id, statusId, orderId  FROM Status WHERE id = ?";
+        String query = "SELECT id, status  FROM Status WHERE id = ?";
         try {
             ArrayList<String> params = new ArrayList<>();
             params.add(String.valueOf(id));
@@ -67,8 +64,8 @@ public class StatusDao {
             for (String[] row : rows) {
                 Status status = new Status();
                 status.setId(Integer.parseInt(row[0]));
-                status.setStatusId(Integer.parseInt(row[1]));
-                status.setOrder_id(Integer.parseInt(row[2]));
+                status.setStatus(row[1]);
+
                 return status;
             }
         } catch (SQLException e) {
