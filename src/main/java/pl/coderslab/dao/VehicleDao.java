@@ -5,8 +5,6 @@ import pl.coderslab.model.Vehicle;
 
 import java.sql.Date;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
