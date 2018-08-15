@@ -14,7 +14,7 @@ public class OrderDao {
 
     public static void saveToDb(Order order) {
         if (order.getId() == 0) {
-            String query = "INSERT INTO Order (admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
+            String query = "INSERT INTO Orders (admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
                     "fixCosts, partsCosts, customer_id, employee_id, vehicle_id)" +
                     " VALUES(?,?,?,?,?,?,?,?,?,?)";
             List<String> params = new ArrayList<>();
@@ -45,7 +45,7 @@ public class OrderDao {
             }
 
         } else {
-            String query = "UPDATE Order SET admissionDate = ? , plannedServiceDate = ? , serviceDate = ? , carProblemDescription = ? , carFixDescription = ? , " +
+            String query = "UPDATE Orders SET admissionDate = ? , plannedServiceDate = ? , serviceDate = ? , carProblemDescription = ? , carFixDescription = ? , " +
                     "fixCosts = ? , partsCosts = ? , customer_id = ? , employee_id = ? , vehicle_id = ?  WHERE id = ?";
             List<String> params = new ArrayList<>();
             params.add(String.valueOf(order.getAdmissionDate()));
@@ -81,7 +81,7 @@ public class OrderDao {
     public static ArrayList<Order> loadAll() {
         ArrayList<Order> orders = new ArrayList<>();
         String query = "SELECT id, admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
-                "fixCosts, partsCosts, customer_id, employee_id, vehicle_id FROM Order";
+                "fixCosts, partsCosts, customer_id, employee_id, vehicle_id FROM Orders";
         try {
             List<String[]> rows = DbService.getData(query, null);
             for (String[] row : rows) {
@@ -123,7 +123,7 @@ public class OrderDao {
 
     public static Order loadById(int id) {
         String query = "SELECT id, admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
-                "fixCosts, partsCosts, customer_id, employee_id, vehicle_id FROM Order WHERE id = ?";
+                "fixCosts, partsCosts, customer_id, employee_id, vehicle_id FROM Orders WHERE id = ?";
         List<String> params = new ArrayList<>();
         params.add(String.valueOf(id));
         try {
@@ -165,7 +165,7 @@ public class OrderDao {
     }
 
     public static void deleteOrder(int id)  {
-        String query = "DELETE FROM Order WHERE id = ?";
+        String query = "DELETE FROM Orders WHERE id = ?";
         List<String> params = new ArrayList<>();
         params.add(String.valueOf(id));
         try {
