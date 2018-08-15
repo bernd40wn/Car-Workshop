@@ -25,6 +25,22 @@ public class Order {
     public Order() {
     }
 
+    public Order(Date admissionDate, Date plannedServiceDate, Date serviceDate, Employee employee, String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts, int customer_id, int employee_id, int vehicle_id) {
+        this.admissionDate = admissionDate;
+        this.plannedServiceDate = plannedServiceDate;
+        this.serviceDate = serviceDate;
+        this.employee = employee;
+        this.carProblemDescription = carProblemDescription;
+        this.carFixDescription = carFixDescription;
+        this.status = status;
+        this.vehicle = vehicle;
+        this.fixCosts = fixCosts;
+        this.partsCosts = partsCosts;
+        this.customer_id = customer_id;
+        this.employee_id = employee_id;
+        this.vehicle_id = vehicle_id;
+    }
+
     public Order(int id, Date admissionDate, Date plannedServiceDate, Date serviceDate, Employee employee, String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts, int customer_id, int employee_id, int vehicle_id) {
         this.id = id;
         this.admissionDate = admissionDate;
