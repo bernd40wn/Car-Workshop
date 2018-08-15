@@ -99,7 +99,7 @@ public class VehicleDao {
         return null;
     }
 
-    private static void delete(int id) {
+    public static void delete(int id) {
         String query = "DELETE FROM Vehicles WHERE id =?";
         List<String> params = new ArrayList<>();
         params.add(String.valueOf(id));

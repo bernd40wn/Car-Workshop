@@ -8,8 +8,8 @@ import java.util.List;
 public class DbService {
 
 
-    private static String dbName = "piechdesign_cl";
-    private static String dbUser = "piechdesign_coderslab";
+    private static String dbName = "piechdesign_coderslab";
+    private static String dbUser = "piechdesign_cl";
     private static String dbPass = "T6Qon89d5";
 
     public static void setDbName(String dbName) {
@@ -27,7 +27,7 @@ public class DbService {
     private static Connection createConn() throws SQLException {
         String dbName1 = dbName.length() == 0 ? dbName : ("/" + dbName);
 
-        String connUrl = "jdbc:mysql://mysql2.superhost.pl" + dbName1 + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+        String connUrl = "jdbc:mysql://mysql.piechdesign.website.pl" + dbName1 + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
         return DriverManager.getConnection(connUrl, dbUser, dbPass);
     }
 
