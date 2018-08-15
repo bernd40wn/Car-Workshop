@@ -4,22 +4,33 @@ public class Employee {
     private int id = 0;
     private String name;
     private String surname;
-    private String adress;
+    private String address;
     private int phonenumber;
     private String note;
     private float workhours;
+    private float hourlyrate;
 
 
     public Employee() {
     }
 
-    public Employee(String name, String surname, String adress, int phonenumber, String note, float workhours) {
+    public Employee(String name, String surname, String address, int phonenumber, String note, float workhours, float hourlyrate) {
         this.name = name;
         this.surname = surname;
-        this.adress = adress;
+        this.address = address;
         this.phonenumber = phonenumber;
         this.note = note;
         this.workhours = workhours;
+        this.hourlyrate = hourlyrate;
+    }
+
+    public float getHourlyrate() {
+        return hourlyrate;
+    }
+
+    public Employee setHourlyrate(float hourlyrate) {
+        this.hourlyrate = hourlyrate;
+        return this;
     }
 
     public void setName(String name) {
@@ -30,8 +41,8 @@ public class Employee {
         this.surname = surname;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String adress) {
+        this.address = adress;
     }
 
     public void setPhonenumber(int phonenumber) {
@@ -62,8 +73,8 @@ public class Employee {
         return surname;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     public int getPhonenumber() {

@@ -94,7 +94,7 @@ public class OrderDao {
                 order.setEmployee(EmployeeDao.loadById(order.getEmployee_id()));
                 order.setStatus(StatusDao.loadById(order.getStatus_id()));
                 order.setVehicle(VehicleDao.loadById(order.getVehicle_id()));
-
+                orders.add(order);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -109,7 +109,7 @@ public class OrderDao {
         List<String> params = new ArrayList<>();
         params.add(String.valueOf(id));
         try {
-            List<String[]> rows = DbService.getData(query, null);
+            List<String[]> rows = DbService.getData(query, params);
             for (String[] row : rows) {
                 Order order = new Order();
                 order.setId(Integer.parseInt(row[0]));
@@ -145,7 +145,7 @@ public class OrderDao {
         return null;
     }
 
-    public static void deleteOrder(int id) {
+    public static void delete(int id) {
         String query = "DELETE FROM Orders WHERE id = ?";
         List<String> params = new ArrayList<>();
         params.add(String.valueOf(id));
