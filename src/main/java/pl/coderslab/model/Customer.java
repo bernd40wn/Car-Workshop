@@ -10,7 +10,7 @@ public class Customer {
     private String surename;
     private Date birthday;
     private int phonenumber;
-    private String adress;
+    private String address;
 
 
     public Customer() {
@@ -21,7 +21,7 @@ public class Customer {
         this.surename = surename;
         this.birthday = birthday;
         this.phonenumber = phonenumber;
-        this.adress = adress;
+        this.address = adress;
     }
 
     public int getPhonenumber() {
@@ -32,12 +32,12 @@ public class Customer {
         this.phonenumber = phonenumber;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String adress) {
+        this.address = adress;
     }
 
     public Date getBirthday() {
