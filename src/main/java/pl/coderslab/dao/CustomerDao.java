@@ -1,5 +1,6 @@
 package pl.coderslab.dao;
 
+
 import pl.coderslab.model.Customer;
 
 import java.sql.Date;
@@ -8,8 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 public class CustomerDao {
-    //test
+
 
     public static void saveToDb(Customer customer) {
         if (customer.getId() == 0) {

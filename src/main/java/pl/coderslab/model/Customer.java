@@ -3,6 +3,7 @@ package pl.coderslab.model;
 import java.sql.Date;
 
 
+
 public class Customer {
     private String name;
     private String surename;
@@ -22,7 +23,6 @@ public class Customer {
         this.phonenumber = phonenumber;
         this.adress = adress;
     }
-
 
     public int getPhonenumber() {
         return phonenumber;
@@ -66,6 +66,7 @@ public class Customer {
 
     public int getId() {
         return id;
+
     }
 
     public void setId(int id) {
