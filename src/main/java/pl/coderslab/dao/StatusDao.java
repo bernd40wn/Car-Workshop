@@ -1,18 +1,13 @@
 package pl.coderslab.dao;
 
 import pl.coderslab.model.Status;
-import pl.coderslab.model.Vehicle;
 
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StatusDao {
 
-    //public Status(int id, int statusId, int orderId) {
 
     public static void saveToDb(Status status) {
         if (status.getId() == 0) {
