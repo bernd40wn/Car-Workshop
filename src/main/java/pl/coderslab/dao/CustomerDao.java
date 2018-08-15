@@ -15,7 +15,7 @@ public class CustomerDao {
 
     public static void saveToDb(Customer customer) {
         if (customer.getId() == 0) {
-            String query = "INSERT INTO Customer (name, surename, birthday, phonenumber, adress) VALUES(?,?,?,?,?,)";
+            String query = "INSERT INTO Customers (name, surename, birthday, phonenumber, adress) VALUES(?,?,?,?,?,)";
             List<String> params = new ArrayList<>();
             params.add(customer.getName());
             params.add(customer.getSurename());
@@ -32,7 +32,7 @@ public class CustomerDao {
             }
 
         } else {
-            String query = "UPDATE Customer SET name = ?, surename = ?, birthday = ?, phonenumber = ?, adress = ? WHERE id = ?";
+            String query = "UPDATE Customers SET name = ?, surename = ?, birthday = ?, phonenumber = ?, adress = ? WHERE id = ?";
             List<String> params = new ArrayList<>();
             params.add(customer.getName());
             params.add(customer.getSurename());
@@ -51,7 +51,7 @@ public class CustomerDao {
     }
 
     public static void deleteCustomer(int id) throws SQLException {
-        String query = "DELETE FROM Customer WHERE id =?";
+        String query = "DELETE FROM Customers WHERE id =?";
         List<String> params = new ArrayList<>();
         params.add(String.valueOf(id));
         try {
@@ -69,7 +69,7 @@ public class CustomerDao {
 
     public static ArrayList<Customer> loadAll() {
         ArrayList<Customer> customers = new ArrayList<>();
-        String query = "SELECT id, name, surename, birthday, phonenumber, adress FROM Customer";
+        String query = "SELECT id, name, surename, birthday, phonenumber, adress FROM Customers";
         try {
             List<String[]> rows = DbService.getData(query, null);
             for (String[] row : rows) {
@@ -91,7 +91,7 @@ public class CustomerDao {
     }
 
     public static Customer loadById(int id) {
-        String query = "SELECT id, name, surename, birthday, phonenumber, adress FROM Customer WHERE id = ?";
+        String query = "SELECT id, name, surename, birthday, phonenumber, adress FROM Customers WHERE id = ?";
         try {
             ArrayList<String> params = new ArrayList<>();
             params.add(String.valueOf(id));
