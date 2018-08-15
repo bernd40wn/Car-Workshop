@@ -1,11 +1,17 @@
 package pl.coderslab.dao;
 
+
+import pl.coderslab.model.Customer;
+
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+
 
 
 public class CustomerDao {
-    //test
+
 
     public static void saveToDb(Customer customer) {
         if (customer.getId() == 0) {
@@ -62,7 +68,7 @@ public class CustomerDao {
 
 
     public static ArrayList<Customer> loadAll() {
-        ArrayList<Customer> customer = new ArrayList<>();
+        ArrayList<Customer> customers = new ArrayList<>();
         String query = "SELECT id, name, surename, birthday, phonenumber, adress FROM Customer";
         try {
             List<String[]> rows = DbService.getData(query, null);
@@ -92,7 +98,7 @@ public class CustomerDao {
             List<String[]> rows = DbService.getData(query, params);
             for (String[] row : rows) {
                 Customer customer = new Customer();
-                Customer setId(Integer.parseInt(row[0]));
+                customer.setId(Integer.parseInt(row[0]));
                 customer.setName(row[1]);
                 customer.setSurename(row[2]);
                 customer.setBirthday(Date.valueOf(row[3]));

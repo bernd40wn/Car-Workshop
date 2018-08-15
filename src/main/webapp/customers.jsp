@@ -12,6 +12,9 @@
 <h2>Klienci</h2>
 
 
+<h3>Lista wszystkich klientów</h3>
+
+
 <h3>Dodaj nowego klienta</h3>
 <form action="" method="post">
     <p><label>Imię: <input type="text" name="name" /></label></p>
@@ -21,7 +24,10 @@
     <p><label>Data urodzenia: <input type="text" name="birthdate" /></label></p>
     <p><input type="submit" value="Dodaj klienta" /></p>
 
-</form>
+<ul>
+    <li><a href="/customer/add">Dodaj nowego klienta</a></li>
+    <li><a href="/customer/edit">Edytuj klienta</a></li>
+</ul>
 
 <h3>Lista wszystkich klientów</h3>
 
