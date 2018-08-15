@@ -10,6 +10,9 @@
 <%@ include file="WEB-INF/includes/header.jspf" %>
 
 <h2>Pracownicy</h2>
-
+<ul>
+    <li><a href="/employee/add">Dodaj nowego pracownika</a></li>
+    <li><a href="/employee/edit">Edytuj pracownika</a></li>
+</ul>
 </body>
 </html>

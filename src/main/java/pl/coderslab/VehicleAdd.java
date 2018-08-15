@@ -7,15 +7,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "employees", urlPatterns = "/employees")
-public class Employees extends HttpServlet {
+@WebServlet(name = "VehicleAdd", urlPatterns = "/vehicle/add")
+public class VehicleAdd extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext()
-                .getRequestDispatcher("//employees.jsp")
+                .getRequestDispatcher("//vehicle-add.jsp")
                 .forward(request,response);
     }
 }
