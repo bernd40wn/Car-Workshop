@@ -23,6 +23,7 @@ public class CustomerDao {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+
         } else {
             String query = "UPDATE Customer SET name = ?, surename = ?, birthday = ?, phonenumber = ?, adress = ? WHERE id = ?";
             List<String> params = new ArrayList<>();

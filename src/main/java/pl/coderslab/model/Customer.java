@@ -24,6 +24,7 @@ public class Customer {
             this.adress = adress;
         }
 
+
         public int getPhonenumber() {
             return phonenumber;
         }

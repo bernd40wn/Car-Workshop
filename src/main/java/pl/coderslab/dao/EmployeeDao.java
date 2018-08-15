@@ -20,6 +20,8 @@ public class EmployeeDao {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+
+
         } else {
             String query = "UPDATE Employee SET name = ?, surename = ?, adress = ?, phonenumber = ?, note = ?, workhours =? WHERE id = ?";
             List<String> params = new ArrayList<>();
