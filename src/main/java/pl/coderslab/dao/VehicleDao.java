@@ -3,10 +3,8 @@ package pl.coderslab.dao;
 import pl.coderslab.model.Vehicle;
 
 
+import java.sql.Date;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,21 +59,19 @@ public class VehicleDao {
         try {
             List<String[]> rows = DbService.getData(query, null);
             for (String[] row : rows) {
-                DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
                 Vehicle vehicle = new Vehicle();
                 vehicle.setId(Integer.parseInt(row[0]));
                 vehicle.setModel(row[1]);
                 vehicle.setBrand(row[2]);
-                vehicle.setProductionDate(df.parse(row[3]));
+                vehicle.setProductionDate(Date.valueOf(row[3]));
                 vehicle.setPlateNumber(row[4]);
-                vehicle.setProductionDate(df.parse(row[5]));
+                vehicle.setNextService(Date.valueOf(row[5]));
                 vehicle.setCustomer_id(Integer.parseInt(row[6]));
                 vehicles.add(vehicle);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+
         }
         return vehicles;
     }
@@ -87,20 +83,17 @@ public class VehicleDao {
             params.add(String.valueOf(id));
             List<String[]> rows = DbService.getData(query, params);
             for (String[] row : rows) {
-                DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
                 Vehicle vehicle = new Vehicle();
                 vehicle.setId(Integer.parseInt(row[0]));
                 vehicle.setModel(row[1]);
                 vehicle.setBrand(row[2]);
-                vehicle.setProductionDate(df.parse(row[3]));
+                vehicle.setProductionDate(Date.valueOf(row[3]));
                 vehicle.setPlateNumber(row[4]);
-                vehicle.setProductionDate(df.parse(row[5]));
+                vehicle.setNextService(Date.valueOf(row[5]));
                 vehicle.setCustomer_id(Integer.parseInt(row[6]));
                 return vehicle;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
             e.printStackTrace();
         }
         return null;

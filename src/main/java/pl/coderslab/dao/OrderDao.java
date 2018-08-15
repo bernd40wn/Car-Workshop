@@ -1,24 +1,17 @@
 package pl.coderslab.dao;
 
 import pl.coderslab.model.Order;
-import pl.coderslab.model.Vehicle;
 
+
+import java.sql.Date;
 import java.sql.SQLException;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDao {
-    ///    public Order(int id, Date admissionDate, Date plannedServiceDate, Date serviceDate, Employee employee,
-    // String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts,
-    // int customer_id, int employee_id, int vehicle_id) {
 
-
-    ///    Date plannedServiceDate, Date serviceDate, Employee employee,
-    // String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts,
-    // int customer_id, int employee_id, int vehicle_id) {
     public static void saveToDb(Order order) {
         if (order.getId() == 0) {
             String query = "INSERT INTO Order (admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
@@ -96,9 +89,9 @@ public class OrderDao {
                 DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
                 Order order = new Order();
                 order.setId(Integer.parseInt(row[0]));
-                order.setAdmissionDate(df.parse(row[1]));
-                order.setPlannedServiceDate(df.parse(row[2]));
-                order.setServiceDate(df.parse(row[3]));
+                order.setAdmissionDate(Date.valueOf(row[1]));
+                order.setPlannedServiceDate(Date.valueOf(row[2]));
+                order.setServiceDate(Date.valueOf(row[3]));
                 //Employee empleyee
 
                 order.setCarProblemDescription(row[4]);
@@ -114,7 +107,7 @@ public class OrderDao {
                 order.setEmployee_id(Integer.parseInt(row[9]));
                 order.setVehicle_id(Integer.parseInt(row[10]));
 
-                //wczytanie i dodanie obiektow (brauej mi customer i employee
+                //wczytanie i dodanie obiektow (brakuje mi customer i employee
 //                order.setEmployee(E)
 //                order.setStatus(StatusDao.loadById())
                 order.setVehicle(VehicleDao.loadById(order.getVehicle_id()));
@@ -122,8 +115,8 @@ public class OrderDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+//        } catch (ParseException e) {
+//            e.printStackTrace();
         }
         return orders;
     }
@@ -139,9 +132,9 @@ public class OrderDao {
                 DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
                 Order order = new Order();
                 order.setId(Integer.parseInt(row[0]));
-                order.setAdmissionDate(df.parse(row[1]));
-                order.setPlannedServiceDate(df.parse(row[2]));
-                order.setServiceDate(df.parse(row[3]));
+                order.setAdmissionDate(Date.valueOf(row[1]));
+                order.setPlannedServiceDate(Date.valueOf(row[2]));
+                order.setServiceDate(Date.valueOf(row[3]));
                 //Employee empleyee
 
                 order.setCarProblemDescription(row[4]);
@@ -165,8 +158,8 @@ public class OrderDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+//        } catch (ParseException e) {
+//            e.printStackTrace();
         }
         return null;
     }

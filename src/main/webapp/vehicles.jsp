@@ -14,5 +14,6 @@
     <li><a href="/vehicle/add">Dodaj pojazd</a></li>
     <li><a href="/vehicle/edit">Edytuj pojazd</a></li>
 </ul>
+
 </body>
 </html>
