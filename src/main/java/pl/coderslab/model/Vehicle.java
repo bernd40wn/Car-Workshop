@@ -1,6 +1,6 @@
 package pl.coderslab.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Vehicle {
     private int id=0;
@@ -14,12 +14,13 @@ public class Vehicle {
     public Vehicle() {
     }
 
-    public Vehicle(String model, String brand, Date productionDate, String plateNumber, Date nextService) {
+    public Vehicle(String model, String brand, Date productionDate, String plateNumber, Date nextService, int customer_id) {
         this.model = model;
         this.brand = brand;
         this.productionDate = productionDate;
         this.plateNumber = plateNumber;
         this.nextService = nextService;
+        this.customer_id = customer_id;
 
     }
 
