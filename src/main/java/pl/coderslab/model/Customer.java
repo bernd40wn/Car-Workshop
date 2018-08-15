@@ -1,21 +1,22 @@
 package pl.coderslab.model;
 
+import java.sql.Date;
+
 public class Customer {
-    import java.util.Date;
 
     public class Customer {
         private String name;
         private String surename;
         private Date birthday;
-        private int id=0;
-        private in phonenumber;
+        private int id = 0;
+        private int phonenumber;
         private String adress''
 
 
         public Customer() {
         }
 
-        public Customer(String name, String surename, Date birthday, in phonenumber, String adress) {
+        public Customer(String name, String surename, Date birthday, int phonenumber, String adress) {
             this.name = name;
             this.surename = surename;
             this.birthday = birthday;
@@ -23,11 +24,11 @@ public class Customer {
             this.adress = adress;
         }
 
-        public in getPhonenumber() {
+        public int getPhonenumber() {
             return phonenumber;
         }
 
-        public void setPhonenumber(in phonenumber) {
+        public void setPhonenumber(int phonenumber) {
             this.phonenumber = phonenumber;
         }
 
