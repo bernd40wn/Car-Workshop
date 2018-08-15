@@ -15,7 +15,7 @@ public class VehicleDao {
 
     public static void saveToDb(Vehicle vehicle) {
         if (vehicle.getId() == 0) {
-            String query = "INSERT INTO Vehicle (model, brand, productionDate, plateNumber, nextService, customer_id) VALUES(?,?,?,?,?,?)";
+            String query = "INSERT INTO Vehicles (model, brand, productionDate, plateNumber, nextService, customer_id) VALUES(?,?,?,?,?,?)";
             List<String> params = new ArrayList<>();
             params.add(vehicle.getModel());
             params.add(vehicle.getBrand());
@@ -35,7 +35,7 @@ public class VehicleDao {
             }
 
         } else {
-            String query = "UPDATE Vehicle SET model = ?, brand = ?, productionDate = ?, plateNumber = ?, nextService = ?, customer_id = ? WHERE id = ?";
+            String query = "UPDATE Vehicles SET model = ?, brand = ?, productionDate = ?, plateNumber = ?, nextService = ?, customer_id = ? WHERE id = ?";
             List<String> params = new ArrayList<>();
             params.add(vehicle.getModel());
             params.add(vehicle.getBrand());
@@ -55,7 +55,7 @@ public class VehicleDao {
 
     public static ArrayList<Vehicle> loadAll() {
         ArrayList<Vehicle> vehicles = new ArrayList<>();
-        String query = "SELECT id, model, brand, productionDate, plateNumber, nextService, customer_id FROM Vehicle";
+        String query = "SELECT id, model, brand, productionDate, plateNumber, nextService, customer_id FROM Vehicles";
         try {
             List<String[]> rows = DbService.getData(query, null);
             for (String[] row : rows) {
@@ -77,7 +77,7 @@ public class VehicleDao {
     }
 
     public static Vehicle loadById(int id) {
-        String query = "SELECT id, model, brand, productionDate, plateNumber, nextService, customer_id FROM Vehicle WHERE id = ?";
+        String query = "SELECT id, model, brand, productionDate, plateNumber, nextService, customer_id FROM Vehicles WHERE id = ?";
         try {
             ArrayList<String> params = new ArrayList<>();
             params.add(String.valueOf(id));
@@ -100,7 +100,7 @@ public class VehicleDao {
     }
 
     private static void delete(int id) {
-        String query = "DELETE FROM Vehicle WHERE id =?";
+        String query = "DELETE FROM Vehicles WHERE id =?";
         List<String> params = new ArrayList<>();
         params.add(String.valueOf(id));
         try {
