@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 public class CustomerDao {
+    //test
 
     public static void saveToDb(Customer customer) {
         if (customer.getId() == 0) {
