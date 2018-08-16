@@ -72,6 +72,7 @@
                                     <td>${employee.id}</td>
                                     <td>${employee.getName()}</td>
                                     <td>${employee.surname}</td>
+                                    <td>${employee.phonenumber}</td>
                                     <td><a href="/employee/details?id=${employee.id}">[D]</a></td>
                                     <td><a href="/orders?emp_id=${employee.id}">[Z]</a></td>
                                     <td><a href="/employee/edit?id=${employee.id}">[E]</a></td>

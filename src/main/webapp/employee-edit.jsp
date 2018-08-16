@@ -35,9 +35,18 @@
                 <li class="breadcrumb-item active">Edytuj pracownika</li>
             </ol>
 
-<h2>Edytuj dane pracownika</h2>
+            <h2>Edytuj dane pracownika</h2>
 
-            <p>tu będzie formularz</p>
+            <form action="" method="post">
+                <p><label>Imię: <input type="text" name="name" value="${employee.name}"/></label></p>
+                <p><label>Nazwisko: <input type="text" name="surname" value="${employee.surname}"/></label></p>
+                <p><label>Adres: <input type="text" name="address" value="${employee.address}"/></label></p>
+                <p><label>Telefon: <input type="text" name="phone" value="${employee.phonenumber}"/></label></p>
+                <p><label>Notatka: <input type="text" name="note" value="${employee.note}"/></label></p>
+                <p><label>Roboczogodziny: <input type="text" name="workhours" value="${employee.workhours}"/></label></p>
+                <p><label>Płaca na godzine: <input type="text" name="hourlyrate" value="${employee.hourlyrate}"/></label></p>
+                <p><input type="submit" value="Zmień"/></p>
+            </form>
 
         </div>
         <!-- /.container-fluid -->

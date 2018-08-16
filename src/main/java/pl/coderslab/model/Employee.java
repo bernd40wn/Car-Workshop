@@ -24,6 +24,17 @@ public class Employee {
         this.hourlyrate = hourlyrate;
     }
 
+    public Employee(int id, String name, String surname, String address, int phonenumber, String note, float workhours, float hourlyrate) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+        this.phonenumber = phonenumber;
+        this.note = note;
+        this.workhours = workhours;
+        this.hourlyrate = hourlyrate;
+    }
+
     public float getHourlyrate() {
         return hourlyrate;
     }
