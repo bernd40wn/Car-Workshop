@@ -15,7 +15,7 @@ public class EmployeeEdit extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext()
-                .getRequestDispatcher("//employee-edit.jsp")
+                .getRequestDispatcher("/employee-edit.jsp")
                 .forward(request,response);
     }
 }

@@ -15,7 +15,7 @@ public class EmployeeDetails extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext()
-                .getRequestDispatcher("//employee-details.jsp")
+                .getRequestDispatcher("/employee-details.jsp")
                 .forward(request,response);
     }
 }
