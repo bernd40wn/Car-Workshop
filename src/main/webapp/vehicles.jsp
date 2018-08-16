@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: hotshot
@@ -32,10 +33,61 @@
                 <li class="breadcrumb-item active">Samochody</li>
             </ol>
 
-<h2>Samochody</h2>
+            <h2>Samochody</h2>
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Lista klientów</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Model</th>
+                                <th>Marka</th>
+                                <th>Rok prod.</th>
+                                <th>Tab. rejestr.</th>
+                                <th>Następny przegląd</th>
+                                <th>Edycja</th>
+                                <th>Usuwanie</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th></th>
+                                <th>Model</th>
+                                <th>Marka</th>
+                                <th>Rok prod.</th>
+                                <th>Tab. rejestr.</th>
+                                <th>Następny przegląd</th>
+                                <th>Edycja</th>
+                                <th>Usuwanie</th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            <c:forEach var="vehicle" items="${vehicles}">
+                                <tr>
+                                    <td>${vehicle.id}</td>
+                                    <td>${vehicle.model}</td>
+                                    <td>${vehicle.brand}</td>
+                                    <td>${vehicle.productionDate}</td>
+                                    <td>${vehicle.plateNumber}</td>
+                                    <td>${vehicle.nextService}</td>
+                                    <td><a href="/vehicle/edit?id=${vehicle.id}">[E]</a></td>
+                                    <td><a href="/vehicle/edit?id=${vehicle.id}&del=true">[U]</a></td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
 <ul>
     <li><a href="/vehicle/add">Dodaj pojazd</a></li>
-    <li><a href="/vehicle/edit">Edytuj pojazd</a></li>
 </ul>
 
         </div>
