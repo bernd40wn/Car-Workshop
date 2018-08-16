@@ -15,7 +15,7 @@ public class CustomerAdd extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext()
-                .getRequestDispatcher("//customer-add.jsp")
+                .getRequestDispatcher("/customer-add.jsp")
                 .forward(request,response);
 
     }

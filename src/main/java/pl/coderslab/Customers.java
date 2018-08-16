@@ -40,7 +40,7 @@ public class Customers extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext()
-                .getRequestDispatcher("//customers.jsp")
+                .getRequestDispatcher("/customers.jsp")
                 .forward(request,response);
 
     }

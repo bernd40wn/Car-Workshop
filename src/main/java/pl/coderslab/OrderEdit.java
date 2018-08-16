@@ -15,7 +15,7 @@ public class OrderEdit extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext()
-                .getRequestDispatcher("//order-edit.jsp")
+                .getRequestDispatcher("/order-edit.jsp")
                 .forward(request,response);
     }
 }

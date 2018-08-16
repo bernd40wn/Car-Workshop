@@ -15,7 +15,7 @@ public class VehicleAdd extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext()
-                .getRequestDispatcher("//vehicle-add.jsp")
+                .getRequestDispatcher("/vehicle-add.jsp")
                 .forward(request,response);
     }
 }
