@@ -11,6 +11,11 @@ public class DbService {
     private static String dbName = "piechdesign_coderslab";
     private static String dbUser = "piechdesign_cl";
     private static String dbPass = "T6Qon89d5";
+//
+//    private static String dbName = "test_ex";
+//    private static String dbUser = "root";
+//    private static String dbPass = "coderslab";
+
 
     public static void setDbName(String dbName) {
         DbService.dbName = dbName;
@@ -28,6 +33,19 @@ public class DbService {
         String dbName1 = dbName.length() == 0 ? dbName : ("/" + dbName);
 
         String connUrl = "jdbc:mysql://mysql.piechdesign.website.pl" + dbName1 + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+//        String connUrl = "jdbc:mysql://localhost:3306" + dbName1 + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            System.out.println("Registro exitoso");
+
+        } catch (Exception e) {
+
+            System.out.println(e.toString());
+
+        }
+
         return DriverManager.getConnection(connUrl, dbUser, dbPass);
     }
 
