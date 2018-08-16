@@ -9,17 +9,19 @@ public class Vehicle {
     private Date productionDate;
     private String plateNumber;
     private Date nextService;
+    Customer customer;
     private int customer_id;
 
     public Vehicle() {
     }
 
-    public Vehicle(String model, String brand, Date productionDate, String plateNumber, Date nextService, int customer_id) {
+    public Vehicle(String model, String brand, Date productionDate, String plateNumber, Date nextService, Customer customer, int customer_id) {
         this.model = model;
         this.brand = brand;
         this.productionDate = productionDate;
         this.plateNumber = plateNumber;
         this.nextService = nextService;
+        this.customer = customer;
         this.customer_id = customer_id;
 
     }
@@ -96,5 +98,14 @@ public class Vehicle {
 
     public Date getNextService() {
         return nextService;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Vehicle setCustomer(Customer customer) {
+        this.customer = customer;
+        return this;
     }
 }
