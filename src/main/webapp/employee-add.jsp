@@ -37,8 +37,17 @@
 
             <h2>Dodaj nowego pracownika</h2>
 
-            <p>tu będzie formularz</p>
+            <form action="" method="post">
+                <p><label>Imię: <input type="text" name="name"/></label></p>
+                <p><label>Nazwisko: <input type="text" name="surname"/></label></p>
+                <p><label>Adres: <input type="text" name="address"/></label></p>
+                <p><label>Telefon: <input type="text" name="phone"/></label></p>
+                <p><label>Notatka: <input type="text" name="note"/></label></p>
+                <p><label>Roboczogodziny: <input type="text" name="workhours"/></label></p>
+                <p><label>Płaca na godzine: <input type="text" name="hourlyrate"/></label></p>
+                <p><input type="submit" value="Dodaj"/></p>
 
+            </form>
 
         </div>
         <!-- /.container-fluid -->
