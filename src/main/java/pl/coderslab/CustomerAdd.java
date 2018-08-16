@@ -10,6 +10,11 @@ import java.io.IOException;
 @WebServlet(name = "CustomerAdd", urlPatterns = "/customer/add")
 public class CustomerAdd extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("name");
+        String surname = request.getParameter("surname");
+        String address = request.getParameter("address");
+        String phone = request.getParameter("phone");
+        String birthdate = request.getParameter("birthdate");
 
     }
 
