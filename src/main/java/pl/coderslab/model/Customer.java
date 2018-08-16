@@ -7,7 +7,7 @@ import java.sql.Date;
 public class Customer {
     private int id = 0;
     private String name;
-    private String surename;
+    private String surname;
     private Date birthday;
     private int phonenumber;
     private String address;
@@ -16,12 +16,21 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String name, String surename, Date birthday, int phonenumber, String adress) {
+    public Customer(String name, String surname, Date birthday, int phonenumber, String adress) {
         this.name = name;
-        this.surename = surename;
+        this.surname = surname;
         this.birthday = birthday;
         this.phonenumber = phonenumber;
         this.address = adress;
+    }
+
+    public Customer(int id, String name, String surname, Date birthday, int phonenumber, String address) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.birthday = birthday;
+        this.phonenumber = phonenumber;
+        this.address = address;
     }
 
     public int getPhonenumber() {
@@ -56,12 +65,12 @@ public class Customer {
         this.name = name;
     }
 
-    public String getSurename() {
-        return surename;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurename(String surename) {
-        this.surename = surename;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public int getId() {

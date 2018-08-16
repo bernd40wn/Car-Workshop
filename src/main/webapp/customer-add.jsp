@@ -37,15 +37,15 @@
 
             <h2>Dodaj nowego klienta</h2>
 
-<form action="" method="post">
-    <p><label>Imię: <input type="text" name="name" /></label></p>
-    <p><label>Nazwisko: <input type="text" name="surname" /></label></p>
-    <p><label>Adres: <input type="text" name="address" /></label></p>
-    <p><label>Telefon: <input type="text" name="phone" /></label></p>
-    <p><label>Data urodzenia: <input type="text" name="birthdate" /></label></p>
-    <p><input type="submit" value="Dodaj" /></p>
+            <form action="" method="post">
+                <p><label>Imię: <input type="text" name="name"/></label></p>
+                <p><label>Nazwisko: <input type="text" name="surname"/></label></p>
+                <p><label>Adres: <input type="text" name="address"/></label></p>
+                <p><label>Telefon: <input type="text" name="phone"/></label></p>
+                <p><label>Data urodzenia: <input type="date" name="birthdate"/></label></p>
+                <p><input type="submit" value="Dodaj"/></p>
 
-</form>
+            </form>
 
         </div>
         <!-- /.container-fluid -->

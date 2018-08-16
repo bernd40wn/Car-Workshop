@@ -38,7 +38,6 @@ public class DbService {
         try {
 
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            System.out.println("Registro exitoso");
 
         } catch (Exception e) {
 
