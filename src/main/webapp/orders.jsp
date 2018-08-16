@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: hotshot
@@ -34,9 +35,65 @@
 
 <h2>Zlecenia</h2>
 
-<ul>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Lista klientów</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Przyjęto</th>
+                                <th>Planowana naprawa</th>
+                                <th>Zakończono</th>
+                                <th>Pracownik</th>
+                                <th>Status</th>
+                                <th>Koszt</th>
+                                <th>Szczegóły</th>
+                                <th>Edycja</th>
+                                <th>Usuwanie</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th></th>
+                                <th>Przyjęto</th>
+                                <th>Planowana naprawa</th>
+                                <th>Zakończono</th>
+                                <th>Pracownik</th>
+                                <th>Status</th>
+                                <th>Koszt</th>
+                                <th>Szczegóły</th>
+                                <th>Edycja</th>
+                                <th>Usuwanie</th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            <c:forEach var="order" items="${orders}">
+                                <tr>
+                                    <td>${order.id}</td>
+                                    <td>${order.admissionDate}</td>
+                                    <td>${order.plannedServiceDate}</td>
+                                    <td>${order.getServiceDate}</td>
+                                    <td>${order.employee.name} ${order.employee.surname}</td>
+                                    <td>${order.status.status}</td>
+                                    <td>${order.fixCosts}</td>
+                                    <td><a href="/order/details?id=${order.id}">[S]</a></td>
+                                    <td><a href="/order/edit?id=${order.id}">[E]</a></td>
+                                    <td><a href="/order/edit?id=${order.id}&del=true">[U]</a></td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <ul>
     <li><a href="/order/add">Dodaj nowe zlecenie</a></li>
-    <li><a href="/order/edit">Edytuj zlecenie</a></li>
 </ul>
 
         </div>

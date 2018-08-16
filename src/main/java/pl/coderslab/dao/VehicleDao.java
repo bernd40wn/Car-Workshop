@@ -79,6 +79,34 @@ public class VehicleDao {
         return vehicles;
     }
 
+    public static ArrayList<Vehicle> loadByCustomer(int id) {
+        ArrayList<Vehicle> vehicles = new ArrayList<>();
+        String query = "SELECT id, model, brand, productionDate, plateNumber, nextService, customer_id FROM Vehicles WHERE customer_id = ?";
+        try {
+            ArrayList<String> params = new ArrayList<>();
+            params.add(String.valueOf(id));
+            List<String[]> rows = DbService.getData(query, params);
+            for (String[] row : rows) {
+                Vehicle vehicle = new Vehicle();
+                vehicle.setId(Integer.parseInt(row[0]));
+                vehicle.setModel(row[1]);
+                vehicle.setBrand(row[2]);
+                vehicle.setProductionDate(Date.valueOf(row[3]));
+                vehicle.setPlateNumber(row[4]);
+                vehicle.setNextService(Date.valueOf(row[5]));
+                vehicle.setCustomer_id(Integer.parseInt(row[6]));
+
+                vehicle.setCustomer(CustomerDao.loadById(vehicle.getCustomer_id()));
+
+                vehicles.add(vehicle);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return vehicles;
+    }
+
     public static Vehicle loadById(int id) {
         String query = "SELECT id, model, brand, productionDate, plateNumber, nextService, customer_id FROM Vehicles WHERE id = ?";
         try {

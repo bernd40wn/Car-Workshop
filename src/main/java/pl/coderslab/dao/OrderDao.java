@@ -25,10 +25,10 @@ public class OrderDao {
             params.add(String.valueOf(order.getPartsCosts()));
             //referencje na inne tabele
 
-            params.add(String.valueOf(order.getCustomer_id()));
-            params.add(String.valueOf(order.getEmployee_id()));
-            params.add(String.valueOf(order.getVehicle_id()));
-            params.add(String.valueOf(order.getStatus_id()));
+            params.add(String.valueOf(order.getCustomerId()));
+            params.add(String.valueOf(order.getEmployeeId()));
+            params.add(String.valueOf(order.getVehicleId()));
+            params.add(String.valueOf(order.getStatusId()));
             try {
                 Integer id = DbService.insertIntoDatabase(query, params);
                 if (id != null) {
@@ -51,10 +51,10 @@ public class OrderDao {
             params.add(String.valueOf(order.getPartsCosts()));
             //referencje na inne tabele
 
-            params.add(String.valueOf(order.getCustomer_id()));
-            params.add(String.valueOf(order.getEmployee_id()));
-            params.add(String.valueOf(order.getVehicle_id()));
-            params.add(String.valueOf(order.getStatus_id()));
+            params.add(String.valueOf(order.getCustomerId()));
+            params.add(String.valueOf(order.getEmployeeId()));
+            params.add(String.valueOf(order.getVehicleId()));
+            params.add(String.valueOf(order.getStatusId()));
 
             params.add(String.valueOf(order.getId()));
             try {
@@ -85,15 +85,53 @@ public class OrderDao {
                 order.setPartsCosts(Float.parseFloat(row[7]));
                 //referencje z innych tablic
 
-                order.setCustomer_id(Integer.parseInt(row[8]));
-                order.setEmployee_id(Integer.parseInt(row[9]));
-                order.setVehicle_id(Integer.parseInt(row[10]));
-                order.setStatus_id(Integer.parseInt(row[11]));
+                order.setCustomerId(Integer.parseInt(row[8]));
+                order.setEmployeeId(Integer.parseInt(row[9]));
+                order.setVehicleId(Integer.parseInt(row[10]));
+                order.setStatusId(Integer.parseInt(row[11]));
 
                 //wczytanie i dodanie obiektow
-                order.setEmployee(EmployeeDao.loadById(order.getEmployee_id()));
-                order.setStatus(StatusDao.loadById(order.getStatus_id()));
-                order.setVehicle(VehicleDao.loadById(order.getVehicle_id()));
+                order.setEmployee(EmployeeDao.loadById(order.getEmployeeId()));
+                order.setStatus(StatusDao.loadById(order.getStatusId()));
+                order.setVehicle(VehicleDao.loadById(order.getVehicleId()));
+                orders.add(order);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return orders;
+    }
+
+    public static ArrayList<Order> loadByEmployee(int id) {
+        ArrayList<Order> orders = new ArrayList<>();
+        String query = "SELECT id, admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
+                "fixCosts, partsCosts, customer_id, employee_id, vehicle_id, status_id FROM Orders WHERE employee_id = ?";
+        try {
+            ArrayList<String> params = new ArrayList<>();
+            params.add(String.valueOf(id));
+            List<String[]> rows = DbService.getData(query, params);
+            for (String[] row : rows) {
+                Order order = new Order();
+                order.setId(Integer.parseInt(row[0]));
+                order.setAdmissionDate(Date.valueOf(row[1]));
+                order.setPlannedServiceDate(Date.valueOf(row[2]));
+                order.setServiceDate(Date.valueOf(row[3]));
+                order.setCarProblemDescription(row[4]);
+                order.setCarFixDescription(row[5]);
+                order.setFixCosts(Float.parseFloat(row[6]));
+                order.setPartsCosts(Float.parseFloat(row[7]));
+                //referencje z innych tablic
+
+                order.setCustomerId(Integer.parseInt(row[8]));
+                order.setEmployeeId(Integer.parseInt(row[9]));
+                order.setVehicleId(Integer.parseInt(row[10]));
+                order.setStatusId(Integer.parseInt(row[11]));
+
+                //wczytanie i dodanie obiektow
+                order.setEmployee(EmployeeDao.loadById(order.getEmployeeId()));
+                order.setStatus(StatusDao.loadById(order.getStatusId()));
+                order.setVehicle(VehicleDao.loadById(order.getVehicleId()));
                 orders.add(order);
             }
         } catch (SQLException e) {
@@ -127,15 +165,15 @@ public class OrderDao {
                 order.setPartsCosts(Float.parseFloat(row[7]));
                 //referencje z innych tablic
 
-                order.setCustomer_id(Integer.parseInt(row[8]));
-                order.setEmployee_id(Integer.parseInt(row[9]));
-                order.setVehicle_id(Integer.parseInt(row[10]));
-                order.setStatus_id(Integer.parseInt(row[11]));
+                order.setCustomerId(Integer.parseInt(row[8]));
+                order.setEmployeeId(Integer.parseInt(row[9]));
+                order.setVehicleId(Integer.parseInt(row[10]));
+                order.setStatusId(Integer.parseInt(row[11]));
 
                 //wczytanie i dodanie obiektow (brauej mi customer i employee
-                order.setEmployee(EmployeeDao.loadById(order.getEmployee_id()));
-                order.setStatus(StatusDao.loadById(order.getStatus_id()));
-                order.setVehicle(VehicleDao.loadById(order.getVehicle_id()));
+                order.setEmployee(EmployeeDao.loadById(order.getEmployeeId()));
+                order.setStatus(StatusDao.loadById(order.getStatusId()));
+                order.setVehicle(VehicleDao.loadById(order.getVehicleId()));
                 return order;
             }
         } catch (SQLException e) {

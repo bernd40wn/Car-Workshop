@@ -17,16 +17,16 @@ public class Order {
 
     private float fixCosts;
     private float partsCosts;
-    private int customer_id;
-    private int employee_id;
-    private int vehicle_id;
-    private int status_id;
+    private int customerId;
+    private int employeeId;
+    private int vehicleId;
+    private int statusId;
 
 
     public Order() {
     }
 
-    public Order(Date admissionDate, Date plannedServiceDate, Date serviceDate, Employee employee, String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts, int customer_id, int employee_id, int vehicle_id, int status_id) {
+    public Order(Date admissionDate, Date plannedServiceDate, Date serviceDate, Employee employee, String carProblemDescription, String carFixDescription, Status status, Vehicle vehicle, float fixCosts, float partsCosts, int customerId, int employeeId, int vehicleId, int statusId) {
         this.admissionDate = admissionDate;
         this.plannedServiceDate = plannedServiceDate;
         this.serviceDate = serviceDate;
@@ -37,18 +37,18 @@ public class Order {
         this.vehicle = vehicle;
         this.fixCosts = fixCosts;
         this.partsCosts = partsCosts;
-        this.customer_id = customer_id;
-        this.employee_id = employee_id;
-        this.vehicle_id = vehicle_id;
-        this.status_id = status_id;
+        this.customerId = customerId;
+        this.employeeId = employeeId;
+        this.vehicleId = vehicleId;
+        this.statusId = statusId;
     }
 
-    public int getStatus_id() {
-        return status_id;
+    public int getStatusId() {
+        return statusId;
     }
 
-    public Order setStatus_id(int status_id) {
-        this.status_id = status_id;
+    public Order setStatusId(int statusId) {
+        this.statusId = statusId;
         return this;
     }
 
@@ -151,30 +151,30 @@ public class Order {
         return this;
     }
 
-    public int getCustomer_id() {
-        return customer_id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public Order setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
+    public Order setCustomerId(int customerId) {
+        this.customerId = customerId;
         return this;
     }
 
-    public int getEmployee_id() {
-        return employee_id;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public Order setEmployee_id(int employee_id) {
-        this.employee_id = employee_id;
+    public Order setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
         return this;
     }
 
-    public int getVehicle_id() {
-        return vehicle_id;
+    public int getVehicleId() {
+        return vehicleId;
     }
 
-    public Order setVehicle_id(int vehicle_id) {
-        this.vehicle_id = vehicle_id;
+    public Order setVehicleId(int vehicleId) {
+        this.vehicleId = vehicleId;
         return this;
     }
 }
