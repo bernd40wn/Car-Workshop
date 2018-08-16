@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
-import java.util.ArrayList;
 
 @WebServlet(name = "CustomerEdit", urlPatterns = "/customer/edit")
 public class CustomerEdit extends HttpServlet {
