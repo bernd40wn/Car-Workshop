@@ -15,7 +15,7 @@ public class Reports extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext()
-                .getRequestDispatcher("//reports.jsp")
+                .getRequestDispatcher("/reports.jsp")
                 .forward(request,response);
     }
 }

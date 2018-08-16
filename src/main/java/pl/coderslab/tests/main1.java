@@ -71,7 +71,7 @@ public class main1 {
 
         System.out.println("dodalem status");
 
-        Vehicle vehicle1 = new Vehicle("f50", "ferrari", datasql1, "ZaSzybkiZaWsciekly", datasql2, 1);
+        Vehicle vehicle1 = new Vehicle("f50", "ferrari", datasql1, "ZaSzybkiZaWsciekly", datasql2, customer1, 1);
 
 //        VehicleDao.saveToDb(vehicle1);
         ArrayList<Vehicle> vehicles = VehicleDao.loadAll();

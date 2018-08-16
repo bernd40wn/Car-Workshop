@@ -15,7 +15,7 @@ public class Orders extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext()
-                .getRequestDispatcher("//orders.jsp")
+                .getRequestDispatcher("/orders.jsp")
                 .forward(request,response);
     }
 }
