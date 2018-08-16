@@ -18,7 +18,7 @@ public class CustomerDao {
             String query = "INSERT INTO Customers (name, surname, birthday, phonenumber, address) VALUES(?,?,?,?,?)";
             List<String> params = new ArrayList<>();
             params.add(customer.getName());
-            params.add(customer.getSurename());
+            params.add(customer.getSurname());
             params.add(String.valueOf(customer.getBirthday()));
             params.add(String.valueOf(customer.getPhonenumber()));
             params.add(customer.getAddress());
@@ -35,7 +35,7 @@ public class CustomerDao {
             String query = "UPDATE Customers SET name = ?, surname = ?, birthday = ?, phonenumber = ?, address = ? WHERE id = ?";
             List<String> params = new ArrayList<>();
             params.add(customer.getName());
-            params.add(customer.getSurename());
+            params.add(customer.getSurname());
             params.add(String.valueOf(customer.getBirthday()));
             params.add(String.valueOf(customer.getPhonenumber()));
             params.add(customer.getAddress());
@@ -76,7 +76,7 @@ public class CustomerDao {
                 Customer customer = new Customer();
                 customer.setId(Integer.parseInt(row[0]));
                 customer.setName(row[1]);
-                customer.setSurename(row[2]);
+                customer.setSurname(row[2]);
                 customer.setBirthday(Date.valueOf(row[3]));
                 customer.setPhonenumber(Integer.parseInt(row[4]));
                 customer.setAddress(row[5]);
@@ -100,7 +100,7 @@ public class CustomerDao {
                 Customer customer = new Customer();
                 customer.setId(Integer.parseInt(row[0]));
                 customer.setName(row[1]);
-                customer.setSurename(row[2]);
+                customer.setSurname(row[2]);
                 customer.setBirthday(Date.valueOf(row[3]));
                 customer.setPhonenumber(Integer.parseInt(row[4]));
                 customer.setAddress(row[5]);

@@ -38,14 +38,13 @@
             <h2>Edytuj dane klienta</h2>
 
             <form action="" method="post">
-    <p><label>Imię: <input type="text" name="name" value="Janusz" /></label></p>
-    <p><label>Nazwisko: <input type="text" name="surname" value="Tracz" /></label></p>
-    <p><label>Adres: <input type="text" name="address" value="Jakiś adres 5/3" /></label></p>
-    <p><label>Telefon: <input type="text" name="phone" value="889012121" /></label></p>
-    <p><label>Data urodzenia: <input type="text" name="birthdate" value="1963-01-21" /></label></p>
-    <p><input type="submit" value="Zmień" /></p>
-
-</form>
+                <p><label>Imię: <input type="text" name="name" value="${customer.name}"/></label></p>
+                <p><label>Nazwisko: <input type="text" name="surname" value="${customer.surname}"/></label></p>
+                <p><label>Adres: <input type="text" name="address" value="${customer.address}"/></label></p>
+                <p><label>Telefon: <input type="text" name="phone" value="${customer.phonenumber}"/></label></p>
+                <p><label>Data urodzenia: <input type="date" name="birthdate" value="${customer.birthday}"/></label></p>
+                <p><input type="submit" value="Zmień"/></p>
+            </form>
 
 
         </div>
