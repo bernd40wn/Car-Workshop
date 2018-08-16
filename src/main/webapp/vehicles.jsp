@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: hotshot
@@ -54,14 +55,15 @@
                             </tr>
                             </thead>
                             <tfoot>
-                            <th></th>
-                            <th>Model</th>
-                            <th>Marka</th>
-                            <th>Rok prod.</th>
-                            <th>Tab. rejestr.</th>
-                            <th>Następny przegląd</th>
-                            <th>Edycja</th>
-                            <th>Usuwanie</th>
+                            <tr>
+                                <th></th>
+                                <th>Model</th>
+                                <th>Marka</th>
+                                <th>Rok prod.</th>
+                                <th>Tab. rejestr.</th>
+                                <th>Następny przegląd</th>
+                                <th>Edycja</th>
+                                <th>Usuwanie</th>
                             </tr>
                             </tfoot>
                             <tbody>
