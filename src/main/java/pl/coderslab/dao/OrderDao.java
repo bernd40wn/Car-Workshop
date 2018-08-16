@@ -103,6 +103,44 @@ public class OrderDao {
         return orders;
     }
 
+    public static ArrayList<Order> loadByEmployee(int id) {
+        ArrayList<Order> orders = new ArrayList<>();
+        String query = "SELECT id, admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
+                "fixCosts, partsCosts, customer_id, employee_id, vehicle_id, status_id FROM Orders WHERE employee_id = ?";
+        try {
+            ArrayList<String> params = new ArrayList<>();
+            params.add(String.valueOf(id));
+            List<String[]> rows = DbService.getData(query, params);
+            for (String[] row : rows) {
+                Order order = new Order();
+                order.setId(Integer.parseInt(row[0]));
+                order.setAdmissionDate(Date.valueOf(row[1]));
+                order.setPlannedServiceDate(Date.valueOf(row[2]));
+                order.setServiceDate(Date.valueOf(row[3]));
+                order.setCarProblemDescription(row[4]);
+                order.setCarFixDescription(row[5]);
+                order.setFixCosts(Float.parseFloat(row[6]));
+                order.setPartsCosts(Float.parseFloat(row[7]));
+                //referencje z innych tablic
+
+                order.setCustomer_id(Integer.parseInt(row[8]));
+                order.setEmployee_id(Integer.parseInt(row[9]));
+                order.setVehicle_id(Integer.parseInt(row[10]));
+                order.setStatus_id(Integer.parseInt(row[11]));
+
+                //wczytanie i dodanie obiektow
+                order.setEmployee(EmployeeDao.loadById(order.getEmployee_id()));
+                order.setStatus(StatusDao.loadById(order.getStatus_id()));
+                order.setVehicle(VehicleDao.loadById(order.getVehicle_id()));
+                orders.add(order);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return orders;
+    }
+
     public static Order loadById(int id) {
         String query = "SELECT id, admissionDate, plannedServiceDate, serviceDate, carProblemDescription, carFixDescription, " +
                 "fixCosts, partsCosts, customer_id, employee_id, vehicle_id, status_id FROM Orders WHERE id = ?";
