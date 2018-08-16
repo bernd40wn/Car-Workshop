@@ -67,6 +67,9 @@ public class VehicleDao {
                 vehicle.setPlateNumber(row[4]);
                 vehicle.setNextService(Date.valueOf(row[5]));
                 vehicle.setCustomer_id(Integer.parseInt(row[6]));
+
+                vehicle.setCustomer(CustomerDao.loadById(vehicle.getCustomer_id()));
+
                 vehicles.add(vehicle);
             }
         } catch (SQLException e) {
@@ -91,6 +94,9 @@ public class VehicleDao {
                 vehicle.setPlateNumber(row[4]);
                 vehicle.setNextService(Date.valueOf(row[5]));
                 vehicle.setCustomer_id(Integer.parseInt(row[6]));
+
+                vehicle.setCustomer(CustomerDao.loadById(vehicle.getCustomer_id()));
+
                 return vehicle;
             }
         } catch (SQLException e) {
