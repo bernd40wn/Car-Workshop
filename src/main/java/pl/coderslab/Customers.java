@@ -1,6 +1,10 @@
 package pl.coderslab;
 
+import pl.coderslab.dao.CustomerDao;
 import pl.coderslab.dao.DbService;
+import pl.coderslab.dao.EmployeeDao;
+import pl.coderslab.model.Customer;
+import pl.coderslab.model.Employee;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,6 +43,10 @@ public class Customers extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ArrayList<Customer> customers = CustomerDao.loadAll();
+
+        request.setAttribute("customers", customers);
+
         getServletContext()
                 .getRequestDispatcher("/customers.jsp")
                 .forward(request,response);

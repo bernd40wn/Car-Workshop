@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: hotshot
@@ -34,13 +35,58 @@
 
             <h2>Klienci</h2>
 
-<h3>Lista wszystkich klientów</h3>
-
-            <p>Lista klientów :)</p>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Lista klientów</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Imię</th>
+                                <th>Nazwisko</th>
+                                <th>Telefon</th>
+                                <th>Dane</th>
+                                <th>Samochody</th>
+                                <th>Edycja</th>
+                                <th>Usuwanie</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th></th>
+                                <th>Imię</th>
+                                <th>Nazwisko</th>
+                                <th>Telefon</th>
+                                <th>Dane</th>
+                                <th>Samochody</th>
+                                <th>Edycja</th>
+                                <th>Usuwanie</th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            <c:forEach var="customer" items="${customers}">
+                                <tr>
+                                    <td>${customer.id}</td>
+                                    <td>${customer.getName()}</td>
+                                    <td>${customer.surname}</td>
+                                    <td>${customer.phonenumber}</td>
+                                    <td><a href="/customer/details?id=${customer.id}">[D]</a></td>
+                                    <td><a href="/vehicles?emp_id=${customer.id}">[S]</a></td>
+                                    <td><a href="/customer/edit?id=${customer.id}">[E]</a></td>
+                                    <td><a href="/customer/edit?id=${customer.id}&del=true">[U]</a></td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
 <ul>
     <li><a href="/customer/add">Dodaj nowego klienta</a></li>
-    <li><a href="/customer/edit">Edytuj klienta</a></li>
 </ul>
 
     </div>
