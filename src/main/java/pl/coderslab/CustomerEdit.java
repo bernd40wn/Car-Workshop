@@ -28,16 +28,22 @@ public class CustomerEdit extends HttpServlet {
             Customer customer = new Customer(Integer.parseInt(customerId), name, surname, date, phoneNumber, address);
             CustomerDao.saveToDb(customer);
 
+            request.setAttribute("success", true);
+
         } catch (Exception e) {
+            request.setAttribute("error", true);
             e.printStackTrace();
         }
-        response.sendRedirect("/customers");
+        getServletContext()
+                .getRequestDispatcher("/customer-add.jsp")
+                .forward(request, response);
     }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String customerId = request.getParameter("id");
         String deleteId = request.getParameter("del");
+
         if ("true".equals(deleteId)) {
             CustomerDao.delete(Integer.parseInt(customerId));
             response.sendRedirect("/customers");
