@@ -32,10 +32,16 @@ public class VehicleAdd extends HttpServlet {
             Vehicle vehicle = new Vehicle(model, brand, productionDateSql, plateNumber, nextServiceSql, customer, customer_id);
             VehicleDao.saveToDb(vehicle);
 
+            request.setAttribute("success", true);
+
         } catch (Exception e) {
+            request.setAttribute("error", true);
             e.printStackTrace();
         }
-        response.sendRedirect("/vehicles");
+
+        getServletContext()
+                .getRequestDispatcher("/vehicle-add.jsp")
+                .forward(request, response);
     }
 
 
