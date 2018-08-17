@@ -76,7 +76,7 @@
                                     <td>${order.id}</td>
                                     <td>${order.admissionDate}</td>
                                     <td>${order.plannedServiceDate}</td>
-                                    <td>${order.getServiceDate}</td>
+                                    <td>${order.serviceDate}</td>
                                     <td>${order.employee.name} ${order.employee.surname}</td>
                                     <td>${order.status.status}</td>
                                     <td>${order.fixCosts}</td>

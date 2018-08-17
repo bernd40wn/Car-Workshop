@@ -39,7 +39,7 @@ public class StatusDao {
 
     public static ArrayList<Status> loadAll() {
         ArrayList<Status> statuses = new ArrayList<>();
-        String query = "SELECT id, statusId  FROM Status";
+        String query = "SELECT id, status  FROM Status";
         try {
             List<String[]> rows = DbService.getData(query, null);
             for (String[] row : rows) {

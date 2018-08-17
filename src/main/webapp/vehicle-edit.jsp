@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: hotshot
@@ -37,7 +38,29 @@
 
             <h2>Edytuj samochód</h2>
 
-            <p>tu będzie formularz</p>
+            <form action="" method="post">
+                <p><label>Model: <input type="text" name="model" value="${vehicle.model}"/></label></p>
+                <p><label>Marka: <input type="text" name="brand" value="${vehicle.brand}"/></label></p>
+                <p><label>Rok prod.: <input type="date" name="productionDate" value="${vehicle.productionDate}"/></label></p>
+                <p><label>Tab. rejestr.: <input type="text" name="plateNumber" value="${vehicle.plateNumber}"/></label></p>
+                <p><label>Następny przegląd: <input type="date" name="nextService" value="${vehicle.nextService}"/></label></p>
+                <p><label>
+                Wybierz właściciela
+                <select name="customer_id">
+                    <c:forEach var="customer" items="${customers}">
+                        <c:choose>
+                            <c:when test="${vehicle.customer_id==customer.id}">
+                                <option value="${customer.id}" selected="selected">${customer.name} ${customer.surname} </option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="${customer.id}">${customer.name} ${customer.surname} </option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </select>
+                </label></p>
+                <p><input type="submit" value="Zmien"/></p>
+            </form>
 
         </div>
         <!-- /.container-fluid -->
