@@ -26,16 +26,16 @@ public class Vehicle {
 
     }
 
-    public Vehicle(int id, String model, String brand, Date productionDate, String plateNumber, Date nextService, int customer_id) {
+    public Vehicle(int id, String model, String brand, Date productionDate, String plateNumber, Date nextService, Customer customer, int customer_id) {
         this.id = id;
         this.model = model;
         this.brand = brand;
         this.productionDate = productionDate;
         this.plateNumber = plateNumber;
         this.nextService = nextService;
+        this.customer = customer;
         this.customer_id = customer_id;
     }
-
 
     public int getId() {
         return id;

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: hotshot
@@ -37,7 +38,20 @@
 
             <h2>Dodaj nowy samochód</h2>
 
-            <p>tu będzie formularz</p>
+            <form action="" method="post">
+                <p><label>Model: <input type="text" name="model"/></label></p>
+                <p><label>Marka: <input type="text" name="brand"/></label></p>
+                <p><label>Rok prod.: <input type="date" name="productionDate"/></label></p>
+                <p><label>Tab. rejestr.: <input type="text" name="plateNumber"/></label></p>
+                <p><label>Następny przegląd: <input type="date" name="nextService"/></label></p>
+
+                Wybierz właściciela <select name="customer_id">
+                    <c:forEach var="customer" items="${customers}">
+                        <option value="${customer.id}">${customer.name} ${customer.surname} </option>
+                    </c:forEach>
+                </select>
+                <p><input type="submit" value="Dodaj"/></p>
+            </form>
 
         </div>
         <!-- /.container-fluid -->

@@ -28,9 +28,9 @@ public class main1 {
         Customer customer1 = new Customer("Jacek", "Wroblewski", datasql1, 870876890, "Warszawa Prosta 51");
 
 //        CustomerDao.saveToDb(customer1);
-        ArrayList<Customer> customers = CustomerDao.loadAll();
-        Customer custtomer2 = CustomerDao.loadById(1);
-        CustomerDao.delete(1);
+//        ArrayList<Customer> customers = CustomerDao.loadAll();
+//        Customer custtomer2 = CustomerDao.loadById(1);
+//        CustomerDao.delete(1);
 
         //    private String name;
         //    private String surename;
@@ -43,9 +43,9 @@ public class main1 {
         Employee employee1 = new Employee("Jan", "Kowalski", "Warszawa Krzywa 15", 999888777, "SuperMechanik i w ogole zajbiscie", 29.5f, 20.5f);
 
        // EmployeeDao.saveToDb(employee1);
-        ArrayList<Employee> employees = EmployeeDao.loadAll();
-        Employee employee = EmployeeDao.loadById(1);
-        EmployeeDao.delete(5);
+//        ArrayList<Employee> employees = EmployeeDao.loadAll();
+//        Employee employee = EmployeeDao.loadById(1);
+//        EmployeeDao.delete(5);
 
 
         //    private String name;
@@ -74,10 +74,10 @@ public class main1 {
         Vehicle vehicle1 = new Vehicle("f50", "ferrari", datasql1, "ZaSzybkiZaWsciekly", datasql2, customer1, 1);
 
 //        VehicleDao.saveToDb(vehicle1);
-        ArrayList<Vehicle> vehicles = VehicleDao.loadAll();
-        Vehicle vehicle = VehicleDao.loadById(1);
-
-        VehicleDao.delete(2);
+//        ArrayList<Vehicle> vehicles = VehicleDao.loadAll();
+//        Vehicle vehicle = VehicleDao.loadById(1);
+//
+//        VehicleDao.delete(2);
 
         //    private String model;
         //    private String brand;
@@ -88,12 +88,12 @@ public class main1 {
 
         System.out.println("dodalem pojazd");
 
-        Order order1 = new Order(datasql1,datasql2,datasql2,employee1,"samochod nie uruchamia sie", "wymienic rozrusznik", status1, vehicle1,399.99f,250.69f,1,1,1,1);
+        Order order1 = new Order(datasql1,datasql2,datasql2,employee1,"samochod nie uruchamia sie", "wymienic rozrusznik", status1, vehicle1,399.99f,250.69f,10,3,1,1);
 
 //        OrderDao.saveToDb(order1);
-        ArrayList<Order> orders = OrderDao.loadAll();
-        Order order = OrderDao.loadById(1);
-        OrderDao.delete(1);
+//        ArrayList<Order> orders = OrderDao.loadAll();
+//        Order order = OrderDao.loadById(1);
+//        OrderDao.delete(1);
 
 //        private java.sql.Date admissionDate;
 //        private java.sql.Date plannedServiceDate;
