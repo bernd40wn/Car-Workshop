@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "AuthFilter", urlPatterns = "/home")
+@WebFilter("/AuthFilter")
 public class AuthFilter implements Filter {
     public void destroy() {
     }
@@ -17,14 +17,13 @@ public class AuthFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) resp;
 
         HttpSession session = request.getSession();
+        Object username = session.getAttribute("username");
 
-        String username = (String) session.getAttribute("username");
         if (username == null) {
-            response.sendRedirect(request.getContextPath() + "/index.html");
+            response.sendRedirect( "/");
+        } else {
+            chain.doFilter(req, resp);
         }
-
-
-        chain.doFilter(req, resp);
     }
 
     public void init(FilterConfig config) throws ServletException {
