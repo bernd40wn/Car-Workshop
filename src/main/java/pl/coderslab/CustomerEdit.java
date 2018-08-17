@@ -35,7 +35,7 @@ public class CustomerEdit extends HttpServlet {
             e.printStackTrace();
         }
         getServletContext()
-                .getRequestDispatcher("/customer-add.jsp")
+                .getRequestDispatcher("/customer-edit.jsp")
                 .forward(request, response);
     }
 
