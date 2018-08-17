@@ -1,11 +1,7 @@
 package pl.coderslab;
 
-import pl.coderslab.dao.CustomerDao;
 import pl.coderslab.dao.OrderDao;
-import pl.coderslab.dao.VehicleDao;
-import pl.coderslab.model.Customer;
 import pl.coderslab.model.Order;
-import pl.coderslab.model.Vehicle;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,6 +36,6 @@ public class Orders extends HttpServlet {
 
         getServletContext()
                 .getRequestDispatcher("/orders.jsp")
-                .forward(request,response);
+                .forward(request, response);
     }
 }
