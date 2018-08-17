@@ -28,20 +28,20 @@
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
         <div class="card-body">
-            <form>
+            <form action="/LoginServlet" method="post">
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="text" id="inputEmail" class="form-control" placeholder="Login" required="required" autofocus="autofocus">
+                        <input type="text" name="login" id="inputEmail" class="form-control" placeholder="Login" autofocus="autofocus">
                         <label for="inputEmail">Login</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
                         <label for="inputPassword">Hasło</label>
                     </div>
                 </div>
-                <a class="btn btn-primary btn-block" href="/home">Zaloguj się</a>
+                <input class="btn btn-primary btn-block" type="submit" value="Zaloguj">
             </form>
         </div>
     </div>
