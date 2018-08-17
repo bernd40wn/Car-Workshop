@@ -73,10 +73,10 @@
                                     <td>${customer.getName()}</td>
                                     <td>${customer.surname}</td>
                                     <td>${customer.phonenumber}</td>
-                                    <td><a href="/customer/details?id=${customer.id}">[D]</a></td>
-                                    <td><a href="/vehicles?emp_id=${customer.id}">[S]</a></td>
-                                    <td><a href="/customer/edit?id=${customer.id}">[E]</a></td>
-                                    <td><a href="/customer/edit?id=${customer.id}&del=true">[U]</a></td>
+                                    <td><a href="/customer/details?id=${customer.id}"><i class="fas fa-list"></i></a></td>
+                                    <td><a href="/vehicles?emp_id=${customer.id}"><i class="fas fa-car"></i></a></td>
+                                    <td><a href="/customer/edit?id=${customer.id}"><i class="fas fa-pen"></i></a></td>
+                                    <td><a href="/customer/edit?id=${customer.id}&del=true"><i class="fas fa-trash"></i></a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>

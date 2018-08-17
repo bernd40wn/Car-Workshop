@@ -80,9 +80,9 @@
                                     <td>${order.employee.name} ${order.employee.surname}</td>
                                     <td>${order.status.status}</td>
                                     <td>${order.fixCosts}</td>
-                                    <td><a href="/order/details?id=${order.id}">[S]</a></td>
-                                    <td><a href="/order/edit?id=${order.id}">[E]</a></td>
-                                    <td><a href="/order/edit?id=${order.id}&del=true">[U]</a></td>
+                                    <td><a href="/order/details?id=${order.id}"><i class="fas fa-list"></i></a></td>
+                                    <td><a href="/order/edit?id=${order.id}"><i class="fas fa-pen"></i></a></td>
+                                    <td><a href="/order/edit?id=${order.id}&del=true"><i class="fas fa-trash"></i></a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>
