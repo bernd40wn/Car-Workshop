@@ -28,12 +28,15 @@ public class CustomerEdit extends HttpServlet {
             Customer customer = new Customer(Integer.parseInt(customerId), name, surname, date, phoneNumber, address);
             CustomerDao.saveToDb(customer);
 
+            request.setAttribute("customer", customer);
+
             request.setAttribute("success", true);
 
         } catch (Exception e) {
             request.setAttribute("error", true);
             e.printStackTrace();
         }
+
         getServletContext()
                 .getRequestDispatcher("/customer-edit.jsp")
                 .forward(request, response);
