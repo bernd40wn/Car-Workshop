@@ -33,11 +33,18 @@ public class VehicleEdit extends HttpServlet {
             Vehicle vehicle = new Vehicle(Integer.parseInt(vehicle_id), model, brand, productionDateSql, plateNumber, nextServiceSql, customer, customer_id);
             VehicleDao.saveToDb(vehicle);
 
+            request.setAttribute("vehicle", vehicle);
+
+            request.setAttribute("success", true);
+
         } catch (Exception e) {
+            request.setAttribute("error", true);
             e.printStackTrace();
         }
-        response.sendRedirect("/vehicles");
 
+        getServletContext()
+                .getRequestDispatcher("/vehicle-edit.jsp")
+                .forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

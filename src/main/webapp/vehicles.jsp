@@ -75,8 +75,8 @@
                                     <td>${vehicle.productionDate}</td>
                                     <td>${vehicle.plateNumber}</td>
                                     <td>${vehicle.nextService}</td>
-                                    <td><a href="/vehicle/edit?id=${vehicle.id}">[E]</a></td>
-                                    <td><a href="/vehicle/edit?id=${vehicle.id}&del=true">[U]</a></td>
+                                    <td><a href="/vehicle/edit?id=${vehicle.id}"><i class="fas fa-pen"></i></a></td>
+                                    <td><a href="/vehicle/edit?id=${vehicle.id}&del=true"><i class="fas fa-trash"></i></a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>
