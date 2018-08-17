@@ -36,31 +36,88 @@
                 <li class="breadcrumb-item active">Edytuj samochód</li>
             </ol>
 
-            <h2>Edytuj samochód</h2>
+            <c:if test="${not empty success}">
+                <div class="card card-register mx-auto mt-5">
+                    <div class="card-body"><span style="color: lawngreen; font-weight: bold;">Pomyślnie zmieniono samochód w bazie</span></div>
+                </div>
+            </c:if>
 
-            <form action="" method="post">
-                <p><label>Model: <input type="text" name="model" value="${vehicle.model}"/></label></p>
-                <p><label>Marka: <input type="text" name="brand" value="${vehicle.brand}"/></label></p>
-                <p><label>Rok prod.: <input type="date" name="productionDate" value="${vehicle.productionDate}"/></label></p>
-                <p><label>Tab. rejestr.: <input type="text" name="plateNumber" value="${vehicle.plateNumber}"/></label></p>
-                <p><label>Następny przegląd: <input type="date" name="nextService" value="${vehicle.nextService}"/></label></p>
-                <p><label>
-                Wybierz właściciela
-                <select name="customer_id">
-                    <c:forEach var="customer" items="${customers}">
-                        <c:choose>
-                            <c:when test="${vehicle.customer_id==customer.id}">
-                                <option value="${customer.id}" selected="selected">${customer.name} ${customer.surname} </option>
-                            </c:when>
-                            <c:otherwise>
-                                <option value="${customer.id}">${customer.name} ${customer.surname} </option>
-                            </c:otherwise>
-                        </c:choose>
-                    </c:forEach>
-                </select>
-                </label></p>
-                <p><input type="submit" value="Zmien"/></p>
-            </form>
+            <c:if test="${not empty error}">
+                <div class="card card-register mx-auto mt-5">
+                    <div class="card-body"><span style="color: red; font-weight: bold;">BŁĄD: nie zmieniono samochodu w bazie</span></div>
+                </div>
+            </c:if>
+
+            <div class="card card-register mx-auto mt-5">
+                <div class="card-header">Edytuj samochód</div>
+                <div class="card-body">
+
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="brand" name="brand" class="form-control" placeholder="Marka:" value="${vehicle.brand}" />
+                                        <label for="brand">Marka:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="model" name="model" class="form-control" placeholder="Model:" value="${vehicle.model}" />
+                                        <label for="model">Model:</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="date" id="productionDate" name="productionDate" class="form-control" placeholder="Rok produkcji:" value="${vehicle.productionDate}" />
+                                        <label for="productionDate">Rok produkcji:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="date" id="nextService" name="nextService" class="form-control" placeholder="Następny przegląd:" value="${vehicle.nextService}" />
+                                        <label for="nextService">Następny przegląd:</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label-group">
+                                <input type="text" id="plateNumber" name="plateNumber" class="form-control" placeholder="Tablica rejestracyjna:" value="${vehicle.plateNumber}" />
+                                <label for="plateNumber">Tablica rejestracyjna:</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="customer">
+                                        Wybierz właściciela:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="customer" class="custom-select custom-select-sm form-control form-control-sm" name="customer_id">
+                                        <c:forEach var="customer" items="${customers}">
+                                            <c:choose>
+                                                <c:when test="${vehicle.customer_id==customer.id}">
+                                                    <option value="${customer.id}" selected="selected">${customer.name} ${customer.surname} </option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option value="${customer.id}">${customer.name} ${customer.surname} </option>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Zmień"  class="btn btn-primary btn-block" />
+
+                    </form>
+                </div>
+            </div>
 
         </div>
         <!-- /.container-fluid -->

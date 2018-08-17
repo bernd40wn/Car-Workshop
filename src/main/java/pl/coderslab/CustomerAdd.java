@@ -29,8 +29,6 @@ public class CustomerAdd extends HttpServlet {
 
             request.setAttribute("success", true);
 
-
-
         } catch (Exception e) {
             request.setAttribute("error", true);
             e.printStackTrace();
