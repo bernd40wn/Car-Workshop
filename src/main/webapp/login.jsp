@@ -28,7 +28,7 @@
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
         <div class="card-body">
-            <form action="/LoginServlet" method="post">
+            <form action="" method="post">
                 <div class="form-group">
                     <div class="form-label-group">
                         <input type="text" name="login" id="inputEmail" class="form-control" placeholder="Login" autofocus="autofocus">

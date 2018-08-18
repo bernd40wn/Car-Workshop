@@ -33,12 +33,12 @@
                 <li class="breadcrumb-item active">Samochody</li>
             </ol>
 
-            <h2>Samochody</h2>
+            <p><a class="btn btn-primary justify-content-end" href="/vehicle/add"><i class="fas fa-plus"></i> Dodaj pojazd</a></p>
 
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table"></i>
-                    Lista klientów</div>
+                    Lista samochodów</div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -84,11 +84,7 @@
                     </div>
                 </div>
             </div>
-
-
-<ul>
-    <li><a href="/vehicle/add">Dodaj pojazd</a></li>
-</ul>
+            <p><a class="btn btn-primary justify-content-end" href="/vehicle/add"><i class="fas fa-plus"></i> Dodaj pojazd</a></p>
 
         </div>
         <!-- /.container-fluid -->

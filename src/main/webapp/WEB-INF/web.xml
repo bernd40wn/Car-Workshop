@@ -3,6 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>pl.coderslab.filters.AuthFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/home</url-pattern>
+        <url-pattern>/customers</url-pattern>
+        <url-pattern>/customer/*</url-pattern>
+        <url-pattern>/employees</url-pattern>
+        <url-pattern>/employee/*</url-pattern>
+        <url-pattern>/orders</url-pattern>
+        <url-pattern>/order/*</url-pattern>
+        <url-pattern>/vehicles</url-pattern>
+        <url-pattern>/vehicle/*</url-pattern>
+        <url-pattern>/reports</url-pattern>
+    </filter-mapping>
+
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>
@@ -19,7 +39,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/LoginServlet</url-pattern>
+        <url-pattern>/index.html</url-pattern>
     </servlet-mapping>
 
   <!--  <servlet>
