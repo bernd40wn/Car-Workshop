@@ -33,7 +33,7 @@
                 <li class="breadcrumb-item active">Pracownicy</li>
             </ol>
 
-            <h2>Pracownicy</h2>
+            <p><a class="btn btn-primary justify-content-end" href="/employee/add"><i class="fas fa-plus"></i> Dodaj nowego pracownika</a></p>
 
             <div class="card mb-3">
                 <div class="card-header">
@@ -85,11 +85,7 @@
                 </div>
             </div>
 
-
-
-<ul>
-    <li><a href="/employee/add">Dodaj nowego pracownika</a></li>
-</ul>
+            <p><a class="btn btn-primary justify-content-end" href="/employee/add"><i class="fas fa-plus"></i> Dodaj nowego pracownika</a></p>
 
         </div>
         <!-- /.container-fluid -->

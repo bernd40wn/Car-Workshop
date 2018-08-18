@@ -33,7 +33,7 @@
                 <li class="breadcrumb-item active">Klienci</li>
             </ol>
 
-            <h2>Klienci</h2>
+            <p><a class="btn btn-primary justify-content-end" href="/customer/add"><i class="fas fa-plus"></i> Dodaj nowego klienta</a></p>
 
             <div class="card mb-3">
                 <div class="card-header">
@@ -84,10 +84,7 @@
                     </div>
                 </div>
             </div>
-
-<ul>
-    <li><a href="/customer/add">Dodaj nowego klienta</a></li>
-</ul>
+            <p><a class="btn btn-primary justify-content-end" href="/customer/add"><i class="fas fa-plus"></i> Dodaj nowego klienta</a></p>
 
     </div>
     <!-- /.container-fluid -->

@@ -33,12 +33,13 @@
                 <li class="breadcrumb-item active">Zlecenia</li>
             </ol>
 
-<h2>Zlecenia</h2>
+            <p><a class="btn btn-primary justify-content-end" href="/order/add"><i class="fas fa-plus"></i> Dodaj nowe zlecenie</a></p>
 
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fas fa-table"></i>
-                    Lista klientów</div>
+                            <i class="fas fa-table"></i>
+                            Lista zleceń
+                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -91,10 +92,7 @@
                 </div>
             </div>
 
-
-            <ul>
-    <li><a href="/order/add">Dodaj nowe zlecenie</a></li>
-</ul>
+            <p><a class="btn btn-primary justify-content-end" href="/order/add"><i class="fas fa-plus"></i> Dodaj nowe zlecenie</a></p>
 
         </div>
         <!-- /.container-fluid -->

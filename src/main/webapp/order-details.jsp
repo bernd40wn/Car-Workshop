@@ -31,9 +31,9 @@
                     <a href="/home">Strona główna</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="/customers">Klienci</a>
+                    <a href="/orders">Zlecenia</a>
                 </li>
-                <li class="breadcrumb-item active">Dane pracownika</li>
+                <li class="breadcrumb-item active">Szczegóły zlecenia</li>
             </ol>
 
             <div class="card card-register mx-auto mt-5">
@@ -45,38 +45,45 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <tbody>
                             <tr>
-                                <th scope="row">Imię</th>
-                                <td>${employee.getName()}</td>
+                                <th scope="row">Data przyjecia zlecenia</th>
+                                <td>${order.admissionDate}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Nazwisko</th>
-                                <td>${employee.surname}</td>
+                                <th scope="row">Planowana data serwisu</th>
+                                <td>${order.plannedServiceDate}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Telefon</th>
-                                <td>${employee.phonenumber}</td>
+                                <th scope="row">Pracownik</th>
+                                <td>${order.employee.name} ${order.employee.surname}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Adres zamieszkania</th>
-                                <td>${employee.address}</td>
+                                <th scope="row">Opis problemu</th>
+                                <td>${order.carProblemDescription}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Notatka</th>
-                                <td>${employee.note}</td>
+                                <th scope="row">Opis naprawy</th>
+                                <td>${order.carFixDescription}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Roboczogodziny</th>
-                                <td>${employee.workhours}</td>
+                                <th scope="row">Status zlecenia</th>
+                                <td>${order.status.status}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Stawka godzinowa</th>
-                                <td>${employee.hourlyrate}</td>
+                                <th scope="row">Serwisowany pojazd</th>
+                                <td>${order.vehicle.model} ${order.vehicle.brand} ${order.vehicle.plateNumber} </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Koszta naprawy</th>
+                                <td>${order.fixCosts}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Koszta części</th>
+                                <td>${order.partsCosts}</td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                     <p>
-                        <a class="btn btn-primary" href="/orders?emp_id=${employee.id}">Zlecenia pracownika</a>
                         <a class="btn btn-secondary" href="/employees">Powrót</a>
                     </p>
                 </div>
