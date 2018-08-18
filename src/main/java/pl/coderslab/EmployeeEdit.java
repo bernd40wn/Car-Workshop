@@ -15,7 +15,7 @@ import java.io.IOException;
 @WebServlet(name = "EmployeeEdit", urlPatterns = "/employee/edit")
 public class EmployeeEdit extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String employeeId = request.getParameter("id");
+        String employee_id = request.getParameter("id");
 
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
@@ -29,7 +29,7 @@ public class EmployeeEdit extends HttpServlet {
             Integer phoneNumber = Integer.parseInt(phone);
             Float workhours1 = Float.parseFloat(workhours);
             Float hourlyrate1 = Float.parseFloat(hourlyrate);
-            Integer id = Integer.parseInt(employeeId);
+            Integer id = Integer.parseInt(employee_id);
             Employee employee = new Employee(id, name, surname, address, phoneNumber, note, workhours1, hourlyrate1);
             EmployeeDao.saveToDb(employee);
 

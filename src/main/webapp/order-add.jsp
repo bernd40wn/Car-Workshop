@@ -33,46 +33,145 @@
                 <li class="breadcrumb-item">
                     <a href="/orders">Zlecenia</a>
                 </li>
-                <li class="breadcrumb-item active">Dodaj nowe zlecenie</li>
+                <li class="breadcrumb-item active">Edytuj Zlecenia</li>
             </ol>
 
-            <h2>Dodaj nowe zlecenie</h2>
+            <c:if test="${not empty success}">
+                <div class="card card-register mx-auto mt-5">
+                    <div class="card-body"><span style="color: lawngreen; font-weight: bold;">Pomyślnie zmieniono zlecenie w bazie</span>
+                    </div>
+                </div>
+            </c:if>
 
-            <form action="" method="post">
-                <p><label>Data przyjecia: <input type="date" name="admissionDate"/></label></p>
-                <p><label>Data planowanego serwisu: <input type="date" name="plannedServiceDate"/></label></p>
-                <p><label>Data serwisu: <input type="date" name="serviceDate"/></label></p>
-                <p><label>Wybierz pracownika
-                    <select name="employee_id">
-                        <c:forEach var="employee" items="${employees}">
-                            <option value="${employee.id}">${employee.name} ${employee.surname}</option>
-                        </c:forEach>
-                    </select>
-                </label></p>
-                <p><label>Opis problemu:
-                    <textarea name="carProblemDescription" rows="4" cols="50"></textarea>
-                </label></p>
-                <p><label>Opis naprawy:
-                    <textarea name="carFixDescription" rows="4" cols="50"></textarea>
-                </label></p>
-                <p><label>Wybierz status zamowienia
-                    <select name="status_id">
-                        <c:forEach var="status" items="${statuses}">
-                            <option value="${status.id}">${status.status}</option>
-                        </c:forEach>
-                    </select>
-                </label></p>
-                <p><label>Wybierz pojazd do naprawy
-                    <select name="vehicle_id">
-                        <c:forEach var="vehicle" items="${vehicles}">
-                            <option value="${vehicle.id}">${vehicle.model} ${vehicle.brand} ${vehicle.plateNumber}</option>
-                        </c:forEach>
-                    </select>
-                </label></p>
-                <p><label>Koszt naprawy: <input type="number" name="fixCosts" min="0" step="0.01"/></label></p>
-                <p><label>Koszt części: <input type="number" name="partsCosts" min="0" step="0.01"/></label></p>
-                <p><input type="submit" value="Dodaj"/></p>
-            </form>
+            <c:if test="${not empty error}">
+                <div class="card card-register mx-auto mt-5">
+                    <div class="card-body"><span style="color: red; font-weight: bold;">BŁĄD: nie zmieniono zlecenia w bazie</span>
+                    </div>
+                </div>
+            </c:if>
+
+            <div class="card card-register mx-auto mt-5">
+                <div class="card-header">Edytuj samochód</div>
+                <div class="card-body">
+
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="date" id="admissionDate" name="admissionDate" class="form-control"
+                                               placeholder="Data zgłoszenia:"/>
+                                        <label for="admissionDate">Data zgłoszenia:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="date" id="plannedServiceDate" name="plannedServiceDate"
+                                               class="form-control" placeholder="Pln. data serwisu:"/>
+                                        <label for="plannedServiceDate">Planowana data serwisu</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label-group">
+                                <input type="date" id="serviceDate" name="serviceDate" class="form-control"
+                                       placeholder="Data serwisu:"/>
+                                <label for="serviceDate">Data serwisu:</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="employee">Wybierz pracownika:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="employee"
+                                            class="custom-select custom-select-sm form-control form-control-sm"
+                                            name="employee_id">
+                                        <c:forEach var="employee" items="${employees}">
+
+                                                    <option value="${employee.id}">${employee.name} ${employee.surname} </option>
+
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label-group">
+                                <input type="text" id="carProblemDescription" name="carProblemDescription"
+                                       class="form-control" placeholder="Opis problemu:"/>
+                                <label for="carProblemDescription">Opis problemu:</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label-group">
+                                <input type="text" id="carFixDescription" name="carFixDescription" class="form-control"
+                                       placeholder="Opis naprawy:" value="${order.carFixDescription}"/>
+                                <label for="carFixDescription">Opis naprawy:</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="status">Status zlecenia:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="status"
+                                            class="custom-select custom-select-sm form-control form-control-sm"
+                                            name="status_id">
+                                        <c:forEach var="status" items="${statuses}">
+
+                                                    <option value="${status.id}">${status.status}</option>
+
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="vehicle">Wybierz pojazd do naprawy:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="vehicle"
+                                            class="custom-select custom-select-sm form-control form-control-sm"
+                                            name="vehicle_id">
+                                        <c:forEach var="vehicle" items="${vehicles}">
+
+                                                    <option value="${vehicle.id}">${vehicle.model} ${vehicle.brand} ${vehicle.plateNumber}</option>
+
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input id="fixCosts" type="number" name="fixCosts" class="form-control"
+                                               placeholder="00.00" min="0" step="0.01"/>
+                                        <label for="fixCosts">Koszta naprawy:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input id="partsCosts" type="number" name="partsCosts" class="form-control"
+                                               min="0" step="0.01" />
+                                        <label for="partsCosts">Koszta częsci:</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Dodaj" class="btn btn-primary btn-block"/>
+
+                    </form>
+                </div>
+            </div>
+
         </div>
         <!-- /.container-fluid -->
         <%@ include file="WEB-INF/includes/footer.jspf" %>

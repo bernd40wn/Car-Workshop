@@ -33,72 +33,164 @@
                 <li class="breadcrumb-item">
                     <a href="/orders">Zlecenia</a>
                 </li>
-                <li class="breadcrumb-item active">Edytuj zlecenie</li>
+                <li class="breadcrumb-item active">Edytuj Zlecenia</li>
             </ol>
 
-            <h2>Edytuj zlecenie</h2>
+            <c:if test="${not empty success}">
+                <div class="card card-register mx-auto mt-5">
+                    <div class="card-body"><span style="color: lawngreen; font-weight: bold;">Pomyślnie zmieniono zlecenie w bazie</span>
+                    </div>
+                </div>
+            </c:if>
 
-            <form action="" method="post">
-                <p><label>Data przyjecia: <input type="date" name="admissionDate" value="${order.admissionDate}"/></label></p>
-                <p><label>Data planowanego serwisu: <input type="date" name="plannedServiceDate" value="${order.plannedServiceDate}"/></label></p>
-                <p><label>Data serwisu: <input type="date" name="serviceDate" value="${order.serviceDate}"/></label></p>
-                <p><label>Wybierz pracownika
-                    <select name="employee_id">
-                        <c:forEach var="employee" items="${employees}">
-                            <c:choose>
-                                <c:when test="${order.employee_id==2}">
-                                    <option value="${employee.id}"
-                                            selected="selected">${employee.name} ${employee.surname} </option>
-                                </c:when>
-                                <c:otherwise>
-                                    <option value="${employee.id}">${employee.name} ${employee.surname} </option>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:forEach>
-                    </select>
-                </label></p>
-                <p><label>Opis problemu:
-                    <textarea name="carProblemDescription" rows="4" cols="50">${order.carProblemDescription}</textarea>
-                </label></p>
-                <p><label>Opis naprawy:
-                    <textarea name="carFixDescription" rows="4" cols="50">${order.carFixDescription}</textarea>
-                </label></p>
-                <p><label>Wybierz status zamowienia
-                    <select name="status_id">
-                        <c:forEach var="status" items="${statuses}">
-                            <c:choose>
-                                <c:when test="${order.status_id==status.id}">
-                                    <option value="${status.id}" selected="selected">${status.status}</option>
-                                </c:when>
-                                <c:otherwise>
-                                    <option value="${status.id}">${status.status}</option>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:forEach>
-                    </select>
-                </label></p>
-                <p><label>Wybierz pojazd do naprawy
-                    <select name="vehicle_id">
-                        <c:forEach var="vehicle" items="${vehicles}">
-                            <c:choose>
-                                <c:when test="${order.vehicle_id==vehicle.id}">
-                                    <option value="${vehicle.id}"
-                                            selected="selected">${vehicle.model} ${vehicle.brand} ${vehicle.plateNumber}</option>
-                                </c:when>
-                                <c:otherwise>
-                                    <option value="${vehicle.id}">${vehicle.model} ${vehicle.brand} ${vehicle.plateNumber}</option>
-                                </c:otherwise>
-                            </c:choose>
+            <c:if test="${not empty error}">
+                <div class="card card-register mx-auto mt-5">
+                    <div class="card-body"><span style="color: red; font-weight: bold;">BŁĄD: nie zmieniono zlecenia w bazie</span>
+                    </div>
+                </div>
+            </c:if>
 
-                        </c:forEach>
-                    </select>
-                </label></p>
-                <p><label>Koszt naprawy: <input type="number" name="fixCosts" min="0" step="0.01"
-                                                value="${order.fixCosts}"/></label></p>
-                <p><label>Koszt części: <input type="number" name="partsCosts" min="0" step="0.01"
-                                               value="${order.partsCosts}"/></label></p>
-                <p><input type="submit" value="Dodaj"/></p>
-            </form>
+            <div class="card card-register mx-auto mt-5">
+                <div class="card-header">Edytuj samochód</div>
+                <div class="card-body">
+
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="date" id="admissionDate" name="admissionDate" class="form-control"
+                                               placeholder="Data zgłoszenia:" value="${order.admissionDate}"/>
+                                        <label for="admissionDate">Rok produkcji:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="date" id="plannedServiceDate" name="plannedServiceDate"
+                                               class="form-control" placeholder="Pln. data serwisu:"
+                                               value="${order.plannedServiceDate}"/>
+                                        <label for="plannedServiceDate">Planowana data serwisu</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label-group">
+                                <input type="date" id="serviceDate" name="serviceDate" class="form-control"
+                                       placeholder="Data serwisu:" value="${order.serviceDate}"/>
+                                <label for="serviceDate">Data serwisu:</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="employee">Wybierz pracownika:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="employee"
+                                            class="custom-select custom-select-sm form-control form-control-sm"
+                                            name="employee_id">
+                                        <c:forEach var="employee" items="${employees}">
+                                            <c:choose>
+                                                <c:when test="${order.employee_id==employee.id}">
+                                                    <option value="${employee.id}"
+                                                            selected="selected">${employee.name} ${employee.surname} </option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option value="${employee.id}">${employee.name} ${employee.surname} </option>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label-group">
+                                <input type="text" id="carProblemDescription" name="carProblemDescription"
+                                       class="form-control" placeholder="Opis problemu:"
+                                       value="${order.carProblemDescription}"/>
+                                <label for="carProblemDescription">Opis problemu:</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label-group">
+                                <input type="text" id="carFixDescription" name="carFixDescription" class="form-control"
+                                       placeholder="Opis naprawy:" value="${order.carFixDescription}"/>
+                                <label for="carFixDescription">Opis naprawy:</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="status">Status zlecenia:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="status"
+                                            class="custom-select custom-select-sm form-control form-control-sm"
+                                            name="status_id">
+                                        <c:forEach var="status" items="${statuses}">
+                                            <c:choose>
+                                                <c:when test="${order.status_id==status.id}">
+                                                    <option value="${status.id}"
+                                                            selected="selected">${status.status}</option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option value="${status.id}">${status.status}</option>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="vehicle">Wybierz pojazd do naprawy:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="vehicle"
+                                            class="custom-select custom-select-sm form-control form-control-sm"
+                                            name="vehicle_id">
+                                        <c:forEach var="vehicle" items="${vehicles}">
+                                            <c:choose>
+                                                <c:when test="${order.vehicle_id==vehicle.id}">
+                                                    <option value="${vehicle.id}"
+                                                            selected="selected">${vehicle.model} ${vehicle.brand} ${vehicle.plateNumber}</option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option value="${vehicle.id}">${vehicle.model} ${vehicle.brand} ${vehicle.plateNumber}</option>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input id="fixCosts" type="number" name="fixCosts" class="form-control"
+                                               placeholder="00.00" min="0" step="0.01" value="${order.fixCosts}"/>
+                                        <label for="fixCosts">Koszta naprawy:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input id="partsCosts" type="number" name="partsCosts" class="form-control"
+                                               min="0" step="0.01" value="${order.partsCosts}"/>
+                                        <label for="partsCosts">Koszta częsci:</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Zmień" class="btn btn-primary btn-block"/>
+
+                    </form>
+                </div>
+            </div>
 
         </div>
         <!-- /.container-fluid -->
