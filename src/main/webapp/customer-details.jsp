@@ -33,13 +33,13 @@
                 <li class="breadcrumb-item">
                     <a href="/customers">Klienci</a>
                 </li>
-                <li class="breadcrumb-item active">Szczegóły klienta</li>
+                <li class="breadcrumb-item active">Dane klienta</li>
             </ol>
 
             <div class="card card-register mx-auto mt-5">
                 <div class="card-header">
                     <i class="fas fa-table"></i>
-                    Szczegóły klienta</div>
+                    Dane klienta</div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
