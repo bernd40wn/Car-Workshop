@@ -42,7 +42,7 @@
             <div class="modal-body">Kliknij "Wyloguj", aby zakończyć pracę w systemie.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Anuluj</button>
-                <a class="btn btn-primary" href="login.html">Wyloguj</a>
+                <a class="btn btn-primary" href="/?logout=admin">Wyloguj</a>
             </div>
         </div>
     </div>
