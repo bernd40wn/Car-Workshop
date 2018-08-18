@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: hotshot
@@ -32,22 +33,85 @@
                 <li class="breadcrumb-item">
                     <a href="/employees">Pracownicy</a>
                 </li>
-                <li class="breadcrumb-item active">Dodaj nowego pracownika</li>
+                <li class="breadcrumb-item active">Dodaj pracownika</li>
             </ol>
 
-            <h2>Dodaj nowego pracownika</h2>
+            <c:if test="${not empty success}">
+                <div class="card card-register mx-auto mt-5">
+                    <div class="card-body"><span style="color: lawngreen; font-weight: bold;">Pomyślnie dodano pracownika do bazy</span></div>
+                </div>
+            </c:if>
 
-            <form action="" method="post">
-                <p><label>Imię: <input type="text" name="name"/></label></p>
-                <p><label>Nazwisko: <input type="text" name="surname"/></label></p>
-                <p><label>Adres: <input type="text" name="address"/></label></p>
-                <p><label>Telefon: <input type="text" name="phone"/></label></p>
-                <p><label>Notatka: <input type="text" name="note"/></label></p>
-                <p><label>Roboczogodziny: <input type="text" name="workhours"/></label></p>
-                <p><label>Płaca na godzine: <input type="text" name="hourlyrate"/></label></p>
-                <p><input type="submit" value="Dodaj"/></p>
+            <c:if test="${not empty error}">
+                <div class="card card-register mx-auto mt-5">
+                    <div class="card-body"><span style="color: red; font-weight: bold;">BŁĄD: nie udało się dodac pracownika do bazy</span></div>
+                </div>
+            </c:if>
 
-            </form>
+            <div class="card card-register mx-auto mt-5">
+                <div class="card-header">Dodaj nowego pracownika</div>
+                <div class="card-body">
+
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="Imię:"/>
+                                        <label for="name">Imię:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="surname" name="surname" class="form-control"  placeholder="Nazwisko:"/>
+                                        <label for="surname">Nazwisko:</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label-group">
+                                <input type="text" id="address" name="address"  class="form-control"  placeholder="Adres:"/>
+                                <label for="address">Adres:</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="phone" name="phone"  class="form-control"  placeholder="Telefon:" />
+                                        <label for="phone">Telefon:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="text" id="note" name="note" class="form-control" placeholder="nota"/>
+                                        <label for="note">Nota:</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="number" id="workhours" name="workhours" class="form-control" placeholder="00.00" min="0" step="0.01" />
+                                        <label for="workhours">Przepracowane godziny:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="number" id="hourlyrate" name="hourlyrate" class="form-control"  placeholder="00.00"  min="0" step="0.01" />
+                                        <label for="number">Stawka godzinowa:</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Dodaj"  class="btn btn-primary btn-block" />
+
+                    </form>
+                </div>
+            </div>
 
         </div>
         <!-- /.container-fluid -->
@@ -55,4 +119,3 @@
 
 </body>
 </html>
-
