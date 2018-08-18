@@ -33,7 +33,7 @@
                 <li class="breadcrumb-item">
                     <a href="/orders">Zlecenia</a>
                 </li>
-                <li class="breadcrumb-item active">Edytuj Zlecenia</li>
+                <li class="breadcrumb-item active">Dodaj zlecenie</li>
             </ol>
 
             <c:if test="${not empty success}">
@@ -51,7 +51,7 @@
             </c:if>
 
             <div class="card card-register mx-auto mt-5">
-                <div class="card-header">Edytuj samochód</div>
+                <div class="card-header">Dodaj nowe zlecenie</div>
                 <div class="card-body">
 
                     <form action="" method="post">
@@ -141,7 +141,7 @@
                                             name="vehicle_id">
                                         <c:forEach var="vehicle" items="${vehicles}">
 
-                                                    <option value="${vehicle.id}">${vehicle.model} ${vehicle.brand} ${vehicle.plateNumber}</option>
+                                                    <option value="${vehicle.id}">${vehicle.brand} ${vehicle.model}, ${vehicle.plateNumber}</option>
 
                                         </c:forEach>
                                     </select>
@@ -153,14 +153,14 @@
                                 <div class="col-md-6">
                                     <div class="form-label-group">
                                         <input id="fixCosts" type="number" name="fixCosts" class="form-control"
-                                               placeholder="00.00" min="0" step="0.01"/>
+                                               placeholder="Koszta naprawy:" min="0" step="0.01"/>
                                         <label for="fixCosts">Koszta naprawy:</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-label-group">
                                         <input id="partsCosts" type="number" name="partsCosts" class="form-control"
-                                               min="0" step="0.01" />
+                                               placeholder="Koszta części:"  min="0" step="0.01" />
                                         <label for="partsCosts">Koszta częsci:</label>
                                     </div>
                                 </div>
