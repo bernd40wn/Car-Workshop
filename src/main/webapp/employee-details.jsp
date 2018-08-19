@@ -76,7 +76,7 @@
                         </table>
                     </div>
                     <p>
-                        <a class="btn btn-primary" href="/orders?emp_id=${employee.id}">Zlecenia pracownika</a>
+                        <a class="btn btn-primary" href="/orders?employee_id=${employee.id}">Zlecenia pracownika</a>
                         <a class="btn btn-secondary" href="/employees">Powrót</a>
                     </p>
                 </div>

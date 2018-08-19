@@ -68,7 +68,7 @@
                         </table>
                     </div>
                     <p>
-                        <a class="btn btn-primary" href="/vehicles?emp_id=${customer.id}">Samochody klienta</a>
+                        <a class="btn btn-primary" href="/vehicles?customer_id=${customer.id}">Samochody klienta</a>
                         <a class="btn btn-secondary" href="/customers">Powrót</a>
                     </p>
                 </div>

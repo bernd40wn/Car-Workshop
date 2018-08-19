@@ -33,7 +33,37 @@
                 <li class="breadcrumb-item active">Samochody</li>
             </ol>
 
-            <p><a class="btn btn-primary justify-content-end" href="/vehicle/add"><i class="fas fa-plus"></i> Dodaj pojazd</a></p>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <form action="" method="get">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <label for="customer" class="col-sm-3 col-form-label">Pokaż samochody klienta:</label>
+                                <div class="col-sm-5">
+                                <select id="customer" class="custom-select custom-select-sm form-control form-control-sm" name="customer_id" onchange="this.form.submit()">
+                                    <option value="null">Wybierz klienta</option>
+                                    <c:forEach var="customer" items="${customers}">
+                                        <c:choose>
+                                            <c:when test="${customer_id==customer.id}">
+                                                <option value="${customer.id}" selected="selected">${customer.name} ${customer.surname}</option>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <option value="${customer.id}">${customer.name} ${customer.surname}</option>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:forEach>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <p class="row no-gutters justify-content-end">
+                        <a class="btn btn-primary" href="/vehicle/add"><i class="fas fa-plus"></i> Dodaj samochód</a>
+                    </p>
+                </div>
+            </div>
 
             <div class="card mb-3">
                 <div class="card-header">
@@ -84,7 +114,10 @@
                     </div>
                 </div>
             </div>
-            <p><a class="btn btn-primary justify-content-end" href="/vehicle/add"><i class="fas fa-plus"></i> Dodaj pojazd</a></p>
+
+            <p class="row no-gutters justify-content-end">
+                <a class="btn btn-primary" href="/vehicle/add"><i class="fas fa-plus"></i> Dodaj samochód</a>
+            </p>
 
         </div>
         <!-- /.container-fluid -->

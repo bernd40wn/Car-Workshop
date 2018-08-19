@@ -33,7 +33,11 @@
                 <li class="breadcrumb-item active">Klienci</li>
             </ol>
 
-            <p><a class="btn btn-primary justify-content-end" href="/customer/add"><i class="fas fa-plus"></i> Dodaj nowego klienta</a></p>
+
+            <p class="row no-gutters justify-content-end">
+                <a class="btn btn-primary" href="/customer/add"><i class="fas fa-plus"></i> Dodaj nowego klienta</a>
+            </p>
+
 
             <div class="card mb-3">
                 <div class="card-header">
@@ -74,7 +78,7 @@
                                     <td>${customer.surname}</td>
                                     <td>${customer.phonenumber}</td>
                                     <td><a href="/customer/details?id=${customer.id}"><i class="fas fa-list"></i></a></td>
-                                    <td><a href="/vehicles?id=${customer.id}"><i class="fas fa-car"></i></a></td>
+                                    <td><a href="/vehicles?customer_id=${customer.id}"><i class="fas fa-car"></i></a></td>
                                     <td><a href="/customer/edit?id=${customer.id}"><i class="fas fa-pen"></i></a></td>
                                     <td><a href="/customer/edit?id=${customer.id}&del=true"><i class="fas fa-trash"></i></a></td>
                                 </tr>
@@ -84,7 +88,11 @@
                     </div>
                 </div>
             </div>
-            <p><a class="btn btn-primary justify-content-end" href="/customer/add"><i class="fas fa-plus"></i> Dodaj nowego klienta</a></p>
+
+            <p class="row no-gutters justify-content-end">
+                <a class="btn btn-primary" href="/customer/add"><i class="fas fa-plus"></i> Dodaj nowego klienta</a>
+            </p>
+
 
     </div>
     <!-- /.container-fluid -->
