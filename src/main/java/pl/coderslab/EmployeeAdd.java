@@ -19,14 +19,12 @@ public class EmployeeAdd extends HttpServlet {
         String address = request.getParameter("address");
         String phone = request.getParameter("phone");
         String note = request.getParameter("note");
-        String workhours = request.getParameter("workhours");
         String hourlyrate = request.getParameter("hourlyrate");
         try {
 
-            Float workhours1 = Float.parseFloat(workhours);
             Float hourlyrate1 = Float.parseFloat(hourlyrate);
             Integer phoneNumber = Integer.parseInt(phone);
-            Employee employee = new Employee(name, surname, address, phoneNumber, note, workhours1, hourlyrate1);
+            Employee employee = new Employee(name, surname, address, phoneNumber, note, hourlyrate1);
             EmployeeDao.saveToDb(employee);
 
         } catch (Exception e) {

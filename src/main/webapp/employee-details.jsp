@@ -65,10 +65,6 @@
                                 <td>${employee.note}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Roboczogodziny</th>
-                                <td>${employee.workhours}</td>
-                            </tr>
-                            <tr>
                                 <th scope="row">Stawka godzinowa</th>
                                 <td>${employee.hourlyrate}</td>
                             </tr>

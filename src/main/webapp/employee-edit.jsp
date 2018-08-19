@@ -85,26 +85,17 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-label-group">
-                                        <input type="text" name="note" class="form-control" placeholder="nota" value="${employee.note}" />
-                                        <label>Nota:</label>
+                                        <input type="number" name="hourlyrate" class="form-control"  min="0" step="0.01" value="${employee.hourlyrate}" />
+                                        <label>Stawka godzinowa:</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="form-row">
-                                <div class="col-md-6">
-                                    <div class="form-label-group">
-                                        <input type="number" name="workhours" class="form-control"  placeholder="00.00" min="0" step="0.01" value="${employee.workhours}" />
-                                        <label for="phone">Przepracowane godziny:</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-label-group">
-                                        <input type="number" name="hourlyrate" class="form-control"  min="0" step="0.01" value="${employee.hourlyrate}" />
-                                        <label>Stawka godzinowa:</label>
-                                    </div>
-                                </div>
+                            <div>
+                                <label for="note">Nota:</label>
+                                <textarea class="form-control" rows="5" id="note" name="note" placeholder="Nota:">${employee.note}</textarea>
+
                             </div>
                         </div>
                         <input type="submit" value="Zmień"  class="btn btn-primary btn-block" />

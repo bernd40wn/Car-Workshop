@@ -75,8 +75,8 @@
                             <thead>
                             <tr>
                                 <th></th>
-                                <th>Model</th>
                                 <th>Marka</th>
+                                <th>Model</th>
                                 <th>Rok prod.</th>
                                 <th>Tab. rejestr.</th>
                                 <th>Następny przegląd</th>
@@ -87,8 +87,8 @@
                             <tfoot>
                             <tr>
                                 <th></th>
-                                <th>Model</th>
                                 <th>Marka</th>
+                                <th>Model</th>
                                 <th>Rok prod.</th>
                                 <th>Tab. rejestr.</th>
                                 <th>Następny przegląd</th>

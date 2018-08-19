@@ -40,7 +40,7 @@ public class main1 {
 
         System.out.println("dodalem klienta");
 
-        Employee employee1 = new Employee("Jan", "Kowalski", "Warszawa Krzywa 15", 999888777, "SuperMechanik i w ogole zajbiscie", 29.5f, 20.5f);
+        Employee employee1 = new Employee("Jan", "Kowalski", "Warszawa Krzywa 15", 999888777, "SuperMechanik i w ogole zajbiscie", 20.5f);
 
        // EmployeeDao.saveToDb(employee1);
 //        ArrayList<Employee> employees = EmployeeDao.loadAll();
