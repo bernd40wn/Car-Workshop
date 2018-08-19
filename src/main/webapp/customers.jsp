@@ -74,7 +74,7 @@
                                     <td>${customer.surname}</td>
                                     <td>${customer.phonenumber}</td>
                                     <td><a href="/customer/details?id=${customer.id}"><i class="fas fa-list"></i></a></td>
-                                    <td><a href="/vehicles?emp_id=${customer.id}"><i class="fas fa-car"></i></a></td>
+                                    <td><a href="/vehicles?id=${customer.id}"><i class="fas fa-car"></i></a></td>
                                     <td><a href="/customer/edit?id=${customer.id}"><i class="fas fa-pen"></i></a></td>
                                     <td><a href="/customer/edit?id=${customer.id}&del=true"><i class="fas fa-trash"></i></a></td>
                                 </tr>

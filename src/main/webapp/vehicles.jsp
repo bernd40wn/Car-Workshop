@@ -70,8 +70,8 @@
                             <c:forEach var="vehicle" items="${vehicles}">
                                 <tr>
                                     <td>${vehicle.id}</td>
-                                    <td>${vehicle.model}</td>
                                     <td>${vehicle.brand}</td>
+                                    <td>${vehicle.model}</td>
                                     <td>${vehicle.productionDate}</td>
                                     <td>${vehicle.plateNumber}</td>
                                     <td>${vehicle.nextService}</td>
