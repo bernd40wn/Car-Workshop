@@ -22,15 +22,13 @@ public class EmployeeEdit extends HttpServlet {
         String address = request.getParameter("address");
         String phone = request.getParameter("phone");
         String note = request.getParameter("note");
-        String workhours = request.getParameter("workhours");
         String hourlyrate = request.getParameter("hourlyrate");
 
         try {
             Integer phoneNumber = Integer.parseInt(phone);
-            Float workhours1 = Float.parseFloat(workhours);
             Float hourlyrate1 = Float.parseFloat(hourlyrate);
             Integer id = Integer.parseInt(employee_id);
-            Employee employee = new Employee(id, name, surname, address, phoneNumber, note, workhours1, hourlyrate1);
+            Employee employee = new Employee(id, name, surname, address, phoneNumber, note, hourlyrate1);
             EmployeeDao.saveToDb(employee);
 
         } catch (Exception e) {

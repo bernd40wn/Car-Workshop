@@ -33,7 +33,9 @@
                 <li class="breadcrumb-item active">Pracownicy</li>
             </ol>
 
-            <p><a class="btn btn-primary justify-content-end" href="/employee/add"><i class="fas fa-plus"></i> Dodaj nowego pracownika</a></p>
+            <p class="row no-gutters justify-content-end">
+                <a class="btn btn-primary" href="/employee/add"><i class="fas fa-plus"></i> Dodaj nowego pracownika</a>
+            </p>
 
             <div class="card mb-3">
                 <div class="card-header">
@@ -74,7 +76,7 @@
                                     <td>${employee.surname}</td>
                                     <td>${employee.phonenumber}</td>
                                     <td><a href="/employee/details?id=${employee.id}"><i class="fas fa-list"></i></a></td>
-                                    <td><a href="/orders?emp_id=${employee.id}"><i class="fas fa-wrench"></i></a></td>
+                                    <td><a href="/orders?employee_id=${employee.id}"><i class="fas fa-wrench"></i></a></td>
                                     <td><a href="/employee/edit?id=${employee.id}"><i class="fas fa-pen"></i></a></td>
                                     <td><a href="/employee/edit?id=${employee.id}&del=true"><i class="fas fa-trash"></i></a></td>
                                 </tr>
@@ -85,7 +87,9 @@
                 </div>
             </div>
 
-            <p><a class="btn btn-primary justify-content-end" href="/employee/add"><i class="fas fa-plus"></i> Dodaj nowego pracownika</a></p>
+            <p class="row no-gutters justify-content-end">
+                <a class="btn btn-primary" href="/employee/add"><i class="fas fa-plus"></i> Dodaj nowego pracownika</a>
+            </p>
 
         </div>
         <!-- /.container-fluid -->

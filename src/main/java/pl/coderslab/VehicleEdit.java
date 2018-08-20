@@ -30,10 +30,13 @@ public class VehicleEdit extends HttpServlet {
             Date nextServiceSql = Date.valueOf(nextService);
             int customer_id = Integer.parseInt(customer_idStr);
             Customer customer = CustomerDao.loadById(customer_id);
+
             Vehicle vehicle = new Vehicle(Integer.parseInt(vehicle_id), model, brand, productionDateSql, plateNumber, nextServiceSql, customer, customer_id);
             VehicleDao.saveToDb(vehicle);
-
             request.setAttribute("vehicle", vehicle);
+
+            ArrayList<Customer> customers = CustomerDao.loadAll();
+            request.setAttribute("customers", customers);
 
             request.setAttribute("success", true);
 

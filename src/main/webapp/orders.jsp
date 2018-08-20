@@ -33,7 +33,39 @@
                 <li class="breadcrumb-item active">Zlecenia</li>
             </ol>
 
-            <p><a class="btn btn-primary justify-content-end" href="/order/add"><i class="fas fa-plus"></i> Dodaj nowe zlecenie</a></p>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <form action="" method="get">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <label for="employee" class="col-sm-4 col-form-label">Pokaż zlecenia pracownika:</label>
+                                <div class="col-sm-5">
+                                    <select id="employee" class="custom-select custom-select-sm form-control form-control-sm" name="employee_id" onchange="this.form.submit()">
+                                        <option value="null">Wybierz pracownika</option>
+                                        <c:forEach var="employee" items="${employees}">
+                                            <c:choose>
+                                                <c:when test="${employee_id==employee.id}">
+                                                    <option value="${employee.id}" selected="selected">${employee.name} ${employee.surname}</option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option value="${employee.id}">${employee.name} ${employee.surname}</option>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <p class="row no-gutters justify-content-end">
+                        <a class="btn btn-primary" href="/order/add"><i class="fas fa-plus"></i> Dodaj nowe zlecenie</a>
+                    </p>
+                </div>
+            </div>
+
+
 
             <div class="card mb-3">
                 <div class="card-header">
@@ -92,7 +124,9 @@
                 </div>
             </div>
 
-            <p><a class="btn btn-primary justify-content-end" href="/order/add"><i class="fas fa-plus"></i> Dodaj nowe zlecenie</a></p>
+            <p class="row no-gutters justify-content-end">
+                <a class="btn btn-primary" href="/order/add"><i class="fas fa-plus"></i> Dodaj nowe zlecenie</a>
+            </p>
 
         </div>
         <!-- /.container-fluid -->

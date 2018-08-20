@@ -10,14 +10,13 @@ public class EmployeeDao {
 
     public static void saveToDb(Employee employee) {
         if (employee.getId() == 0) {
-            String query = "INSERT INTO Employees (name, surname, address, phonenumber, note, workhours, hourlyrate ) VALUES(?,?,?,?,?,?,?)";
+            String query = "INSERT INTO Employees (name, surname, address, phonenumber, note, hourlyrate ) VALUES(?,?,?,?,?,?)";
             List<String> params = new ArrayList<>();
             params.add(employee.getName());
             params.add(employee.getSurname());
             params.add(employee.getAddress());
             params.add(String.valueOf(employee.getPhonenumber()));
             params.add(employee.getNote());
-            params.add(String.valueOf(employee.getWorkhours()));
             params.add(String.valueOf(employee.getHourlyrate()));
             try {
                 Integer id = DbService.insertIntoDatabase(query, params);
@@ -30,16 +29,14 @@ public class EmployeeDao {
 
 
         } else {
-            String query = "UPDATE Employees SET name = ?, surname = ?, address = ?, phonenumber = ?, note = ?, workhours = ?, hourlyrate = ? WHERE id = ?";
+            String query = "UPDATE Employees SET name = ?, surname = ?, address = ?, phonenumber = ?, note = ?, hourlyrate = ? WHERE id = ?";
             List<String> params = new ArrayList<>();
             params.add(employee.getName());
             params.add(employee.getSurname());
             params.add(employee.getAddress());
             params.add(String.valueOf(employee.getPhonenumber()));
             params.add(employee.getNote());
-            params.add(String.valueOf(employee.getWorkhours()));
             params.add(String.valueOf(employee.getHourlyrate()));
-
             params.add(String.valueOf(employee.getId()));
             try {
                 DbService.executeUpdate(query, params);
@@ -71,7 +68,7 @@ public class EmployeeDao {
     public static ArrayList<Employee> loadAll() {
 
         ArrayList<Employee> employees = new ArrayList<>();
-        String query = "SELECT id, name, surname, address, phonenumber, note, workhours, hourlyrate FROM Employees";
+        String query = "SELECT id, name, surname, address, phonenumber, note, hourlyrate FROM Employees";
         try {
             List<String[]> rows = DbService.getData(query, null);
             for (String[] row : rows) {
@@ -82,8 +79,7 @@ public class EmployeeDao {
                 employee.setAddress(row[3]);
                 employee.setPhonenumber(Integer.parseInt(row[4]));
                 employee.setNote(row[5]);
-                employee.setWorkhours(Float.parseFloat(row[6]));
-                employee.setHourlyrate(Float.parseFloat(row[7]));
+                employee.setHourlyrate(Float.parseFloat(row[6]));
                 employees.add(employee);
             }
         } catch (SQLException e) {
@@ -94,7 +90,7 @@ public class EmployeeDao {
     }
 
     public static Employee loadById(int id) {
-        String query = "SELECT id, name, surname, address, phonenumber, note, workhours, hourlyrate FROM Employees WHERE id = ?";
+        String query = "SELECT id, name, surname, address, phonenumber, note, hourlyrate FROM Employees WHERE id = ?";
         try {
             ArrayList<String> params = new ArrayList<>();
             params.add(String.valueOf(id));
@@ -107,8 +103,7 @@ public class EmployeeDao {
                 employee.setAddress(row[3]);
                 employee.setPhonenumber(Integer.parseInt(row[4]));
                 employee.setNote(row[5]);
-                employee.setWorkhours(Float.parseFloat(row[6]));
-                employee.setHourlyrate(Float.parseFloat(row[7]));
+                employee.setHourlyrate(Float.parseFloat(row[6]));
 
                 return employee;
             }
