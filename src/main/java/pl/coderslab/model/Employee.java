@@ -7,31 +7,28 @@ public class Employee {
     private String address;
     private int phonenumber;
     private String note;
-    private float workhours;
     private float hourlyrate;
 
 
     public Employee() {
     }
 
-    public Employee(String name, String surname, String address, int phonenumber, String note, float workhours, float hourlyrate) {
+    public Employee(String name, String surname, String address, int phonenumber, String note, float hourlyrate) {
         this.name = name;
         this.surname = surname;
         this.address = address;
         this.phonenumber = phonenumber;
         this.note = note;
-        this.workhours = workhours;
         this.hourlyrate = hourlyrate;
     }
 
-    public Employee(int id, String name, String surname, String address, int phonenumber, String note, float workhours, float hourlyrate) {
+    public Employee(int id, String name, String surname, String address, int phonenumber, String note, float hourlyrate) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.address = address;
         this.phonenumber = phonenumber;
         this.note = note;
-        this.workhours = workhours;
         this.hourlyrate = hourlyrate;
     }
 
@@ -64,10 +61,6 @@ public class Employee {
         this.note = note;
     }
 
-    public void setWorkhours(float workhours) {
-        this.workhours = workhours;
-    }
-
     public int getId() {
         return id;
     }
@@ -96,7 +89,4 @@ public class Employee {
         return note;
     }
 
-    public float getWorkhours() {
-        return workhours;
-    }
 }

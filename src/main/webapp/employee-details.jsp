@@ -65,10 +65,6 @@
                                 <td>${employee.note}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Roboczogodziny</th>
-                                <td>${employee.workhours}</td>
-                            </tr>
-                            <tr>
                                 <th scope="row">Stawka godzinowa</th>
                                 <td>${employee.hourlyrate}</td>
                             </tr>
@@ -76,7 +72,7 @@
                         </table>
                     </div>
                     <p>
-                        <a class="btn btn-primary" href="/orders?emp_id=${employee.id}">Zlecenia pracownika</a>
+                        <a class="btn btn-primary" href="/orders?employee_id=${employee.id}">Zlecenia pracownika</a>
                         <a class="btn btn-secondary" href="/employees">Powrót</a>
                     </p>
                 </div>
